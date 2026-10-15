@@ -1,0 +1,5632 @@
+/* =========================================================
+
+
+
+   EASYBUY CART PAGE
+
+
+
+   Purple, deep purple and lavender palette.
+
+
+
+   Original structure, sizing, spacing and responsive layout retained.
+
+
+
+   ========================================================= */
+
+
+
+/* SECTION 1: RESET AND COLOUR VARIABLES */
+
+
+
+:root {
+
+
+
+    \--ink: #242127;
+
+
+
+    \--paper: #ffffff;
+
+
+
+    \--cream: #f7f4ff;
+
+
+
+    \--sand: #e9e2ff;
+
+
+
+    \--taupe: #6c55c7;
+
+
+
+    \--muted: #77717b;
+
+
+
+    \--line: #ded4ff;
+
+
+
+    \--accent: #6c55c7;
+
+
+
+    \--purple: #5433eb;
+
+
+
+    \--purple-deep: #3921a7;
+
+
+
+    \--lavender: #e9e2ff;
+
+
+
+    \--lavender-accent: #6c55c7;
+
+
+
+    \--page-width: 1375px;
+
+
+
+    \--soft-radius: 8px;
+
+
+
+}
+
+
+
+* {
+
+
+
+    margin: 0;
+
+
+
+    padding: 0;
+
+
+
+    box-sizing: border-box;
+
+
+
+}
+
+
+
+html {
+
+
+
+    scroll-behavior: smooth;
+
+
+
+}
+
+
+
+body {
+
+
+
+    min-height: 100vh;
+
+
+
+    background: var(--paper);
+
+
+
+    color: var(--ink);
+
+
+
+    font-family: Arial, Helvetica, sans-serif;
+
+
+
+    line-height: 1.55;
+
+
+
+}
+
+
+
+a {
+
+
+
+    color: inherit;
+
+
+
+    text-decoration: none;
+
+
+
+}
+
+
+
+button,
+
+
+
+input {
+
+
+
+    font: inherit;
+
+
+
+}
+
+
+
+button,
+
+
+
+a {
+
+
+
+    -webkit-tap-highlight-color: transparent;
+
+
+
+}
+
+
+
+button {
+
+
+
+    cursor: pointer;
+
+
+
+}
+
+
+
+img {
+
+
+
+    max-width: 100%;
+
+
+
+}
+
+
+
+/* SECTION 2: HEADER */
+
+
+
+.site-header {
+
+
+
+    position: sticky;
+
+
+
+    top: 0;
+
+
+
+    z-index: 100;
+
+
+
+    width: 100%;
+
+
+
+    background: rgba(255, 255, 255, 0.98);
+
+
+
+    border-bottom: 1px solid var(--line);
+
+
+
+}
+
+
+
+.navbar {
+
+
+
+    width: min(calc(100% - 64px), var(--page-width));
+
+
+
+    min-height: 82px;
+
+
+
+    margin: 0 auto;
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: space-between;
+
+
+
+    gap: 24px;
+
+
+
+}
+
+
+
+/* SECTION 3: EASYBUY LOGO */
+
+
+
+.logo,
+
+
+
+.footer-logo {
+
+
+
+    display: inline-block;
+
+
+
+    color: var(--ink);
+
+
+
+    font-family: Georgia, "Times New Roman", serif;
+
+
+
+    font-size: 30px;
+
+
+
+    font-weight: 700;
+
+
+
+    letter-spacing: -1.5px;
+
+
+
+    line-height: 1;
+
+
+
+    white-space: nowrap;
+
+
+
+}
+
+
+
+.logo span,
+
+
+
+.footer-logo span {
+
+
+
+    color: var(--purple);
+
+
+
+}
+
+
+
+/* SECTION 4: HEADER ACTIONS */
+
+
+
+.nav-actions {
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: flex-end;
+
+
+
+    gap: 28px;
+
+
+
+}
+
+
+
+.nav-text,
+
+
+
+.profile-link {
+
+
+
+    display: inline-flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: center;
+
+
+
+    gap: 8px;
+
+
+
+    color: var(--ink);
+
+
+
+    font-size: 12px;
+
+
+
+    font-weight: 700;
+
+
+
+    transition: color 0.2s ease;
+
+
+
+}
+
+
+
+.nav-text:hover,
+
+
+
+.profile-link:hover {
+
+
+
+    color: var(--purple);
+
+
+
+}
+
+
+
+.nav-icon {
+
+
+
+    font-size: 22px;
+
+
+
+    line-height: 1;
+
+
+
+}
+
+
+
+.profile-link {
+
+
+
+    gap: 10px;
+
+
+
+}
+
+
+
+.profile-dp {
+
+
+
+    width: 38px;
+
+
+
+    height: 38px;
+
+
+
+    flex: 0 0 38px;
+
+
+
+    display: inline-flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: center;
+
+
+
+    border-radius: 50%;
+
+
+
+    background: var(--lavender);
+
+
+
+    color: var(--purple-deep);
+
+
+
+    font-size: 12px;
+
+
+
+    font-weight: 700;
+
+
+
+}
+
+/* SECTION 5: BENEFITS STRIP — DARK CHARCOAL */
+
+/* =========================================================
+   SECTION 5: BENEFITS STRIP
+   Soft lavender background inspired by the login page
+   ========================================================= */
+
+.benefits-strip {
+    min-height: 82px;
+    margin-top: 0;
+    padding: 20px max(32px, calc((100% - var(--page-width)) / 2));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background: #e9e0f8;
+    color: #25232a;
+
+    border-top: 1px solid #d9c9f0;
+    border-bottom: 1px solid #d9c9f0;
+}
+
+.benefit-item {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    min-width: 0;
+}
+
+.benefit-icon {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c5afe8;
+    border-radius: 50%;
+    background: #f7f2ff;
+    color: #6549d8;
+    font-size: 17px;
+}
+
+.benefit-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.benefit-item strong {
+    color: #25232a;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.benefit-item div span {
+    color: #716a7b;
+    font-size: 11px;
+}
+
+.benefit-divider {
+    width: 1px;
+    height: 32px;
+    flex: 0 0 1px;
+    background: #cdbce9;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+    .benefits-strip {
+        padding: 18px 24px;
+        gap: 14px;
+    }
+
+    .benefit-item {
+        gap: 8px;
+    }
+
+    .benefit-item strong {
+        font-size: 9px;
+        letter-spacing: 0.6px;
+    }
+
+    .benefit-item div span {
+        font-size: 10px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .benefits-strip {
+        padding: 20px 22px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .benefit-item {
+        justify-content: flex-start;
+    }
+
+    .benefit-divider {
+        width: 100%;
+        height: 1px;
+        flex-basis: 1px;
+    }
+}
+/* =========================================================
+
+   SECTION 22: CART FOOTER — MATCH PRODUCT DETAILS PAGE
+
+   ========================================================= */
+
+
+
+.cart-footer {
+
+    width: 100%;
+
+    margin-top: 42px;
+
+    padding: 0;
+
+    background: #f5f0ff;
+
+    color: #49445a;
+
+    border-top: 1px solid #e2d8ff;
+
+}
+
+
+
+/* Main footer layout */
+
+.cart-footer .footer-main {
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 0.9fr 1fr 1.15fr;
+
+    gap: 40px;
+
+    padding: 64px 6.5% 48px;
+
+    background: #f5f0ff;
+
+}
+
+
+
+/* Footer logo */
+
+.cart-footer .footer-logo,
+
+.cart-footer .footer-brand,
+
+.cart-footer .logo {
+
+    color: #17151b;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 29px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+
+.cart-footer .footer-logo span,
+
+.cart-footer .footer-brand span,
+
+.cart-footer .logo span {
+
+    color: #5433eb;
+
+}
+
+
+
+/* Footer descriptions */
+
+.cart-footer p {
+
+    color: #777086;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+
+/* Footer headings */
+
+.cart-footer h4,
+
+.cart-footer .footer-heading {
+
+    margin: 0 0 20px;
+
+    color: #191720;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+}
+
+
+
+/* Footer links */
+
+.cart-footer a {
+
+    color: #5f5873;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+
+}
+
+
+
+.cart-footer a:hover {
+
+    color: #5433eb;
+
+}
+
+
+
+/* Keep footer links vertically spaced */
+
+.cart-footer .footer-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+}
+
+
+
+/* Small tagline */
+
+.cart-footer .footer-tagline {
+
+    color: #5433eb;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+}
+
+
+
+/* Bottom copyright row */
+
+.cart-footer .footer-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin: 0 6.5%;
+
+    padding: 24px 0;
+
+    border-top: 1px solid #e2d8ff;
+
+    background: transparent;
+
+}
+
+
+
+.cart-footer .footer-bottom p,
+
+.cart-footer .footer-bottom a {
+
+    margin: 0;
+
+    color: #777086;
+
+    font-size: 11px;
+
+}
+
+
+
+.cart-footer .footer-bottom a:hover {
+
+    color: #5433eb;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   RESPONSIVE FOOTER
+
+   ========================================================= */
+
+
+
+@media (max-width: 900px) {
+
+    .cart-footer .footer-main {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 35px;
+
+    }
+
+
+
+    .benefits-strip {
+
+        padding: 20px 5%;
+
+        gap: 18px;
+
+    }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+    .benefits-strip {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        padding: 24px 6%;
+
+    }
+
+
+
+    .benefit-item {
+
+        width: 100%;
+
+    }
+
+
+
+    .cart-footer .footer-main {
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        padding: 40px 6% 32px;
+
+    }
+
+
+
+    .cart-footer .footer-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+        margin: 0 6%;
+
+    }
+
+}
+
+
+
+
+
+/* SECTION 6: MAIN PAGE CONTAINER */
+
+
+
+.cart-page {
+
+
+
+    width: min(calc(100% - 64px), var(--page-width));
+
+
+
+    margin: 44px auto 85px;
+
+
+
+}
+
+
+
+/* SECTION 7: CART HERO BANNER */
+
+
+
+.cart-hero {
+
+
+
+    min-height: 275px;
+
+
+
+    position: relative;
+
+
+
+    overflow: hidden;
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    padding: 50px 58px;
+
+
+
+    border: 1px solid var(--line);
+
+
+
+    border-radius: var(--soft-radius);
+
+
+
+    background: linear-gradient(120deg, #6c55c7 0%, #5433eb 58%, #3921a7 100%);
+
+
+
+}
+
+
+
+.cart-hero-content {
+
+
+
+    position: relative;
+
+
+
+    z-index: 2;
+
+
+
+    max-width: 680px;
+
+
+
+}
+
+
+
+.eyebrow {
+
+
+
+    margin-bottom: 12px;
+
+
+
+    color: var(--lavender-accent);
+
+
+
+    font-size: 11px;
+
+
+
+    font-weight: 800;
+
+
+
+    letter-spacing: 2.2px;
+
+
+
+    line-height: 1.5;
+
+
+
+}
+
+
+
+.cart-hero h1 {
+
+
+
+    color: #ffffff;
+
+
+
+    font-family: Georgia, "Times New Roman", serif;
+
+
+
+    font-size: clamp(45px, 5vw, 68px);
+
+
+
+    font-weight: 400;
+
+
+
+    letter-spacing: -2.5px;
+
+
+
+    line-height: 1.08;
+
+
+
+}
+
+
+
+.title-dot {
+
+
+
+    color: var(--lavender);
+
+
+
+}
+
+
+
+.hero-description {
+
+
+
+    margin-top: 18px;
+
+
+
+    color: #f1edff;
+
+
+
+    font-size: 16px;
+
+
+
+}
+
+
+
+.hero-watermark {
+
+
+
+    position: absolute;
+
+
+
+    right: 42px;
+
+
+
+    bottom: -115px;
+
+
+
+    color: rgba(255, 255, 255, 0.09);
+
+
+
+    font-family: Georgia, "Times New Roman", serif;
+
+
+
+    font-size: clamp(190px, 22vw, 300px);
+
+
+
+    font-weight: 700;
+
+
+
+    letter-spacing: -20px;
+
+
+
+    line-height: 1;
+
+
+
+    user-select: none;
+
+
+
+}
+
+
+
+/* SECTION 8: LOGIN WARNING */
+
+
+
+.login-warning {
+
+
+
+    margin-top: 22px;
+
+
+
+    padding: 15px 18px;
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    gap: 12px;
+
+
+
+    border: 1px solid #ded4ff;
+
+
+
+    border-radius: var(--soft-radius);
+
+
+
+    background: #f7f4ff;
+
+
+
+    color: var(--purple-deep);
+
+
+
+    font-size: 13px;
+
+
+
+    font-weight: 600;
+
+
+
+}
+
+
+
+.warning-icon {
+
+
+
+    width: 26px;
+
+
+
+    height: 26px;
+
+
+
+    flex: 0 0 26px;
+
+
+
+    display: inline-flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: center;
+
+
+
+    border-radius: 50%;
+
+
+
+    background: #ffffff;
+
+
+
+    color: var(--purple);
+
+
+
+    font-weight: 800;
+
+
+
+}
+
+
+
+/* SECTION 9: EMPTY CART AND LOGIN CARDS */
+
+
+
+.empty-cart-card {
+
+
+
+    min-height: 350px;
+
+
+
+    margin-top: 30px;
+
+
+
+    padding: 55px 28px;
+
+
+
+    display: flex;
+
+
+
+    flex-direction: column;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: center;
+
+
+
+    text-align: center;
+
+
+
+    border: 1px solid var(--line);
+
+
+
+    border-radius: var(--soft-radius);
+
+
+
+    background: #ffffff;
+
+
+
+}
+
+
+
+.empty-cart-icon {
+
+
+
+    width: 58px;
+
+
+
+    height: 58px;
+
+
+
+    margin-bottom: 20px;
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: center;
+
+
+
+    border-radius: 50%;
+
+
+
+    background: var(--lavender);
+
+
+
+    color: var(--purple);
+
+
+
+    font-size: 26px;
+
+
+
+}
+
+
+
+.empty-cart-card .eyebrow {
+
+
+
+    margin-bottom: 8px;
+
+
+
+}
+
+
+
+.empty-cart-card h2 {
+
+
+
+    margin-bottom: 10px;
+
+
+
+    font-family: Georgia, "Times New Roman", serif;
+
+
+
+    font-size: 34px;
+
+
+
+    font-weight: 400;
+
+
+
+}
+
+
+
+.empty-cart-card > p:not(.eyebrow) {
+
+
+
+    max-width: 480px;
+
+
+
+    color: var(--muted);
+
+
+
+    font-size: 14px;
+
+
+
+}
+
+
+
+.button-dark {
+
+
+
+    min-height: 48px;
+
+
+
+    margin-top: 24px;
+
+
+
+    padding: 0 22px;
+
+
+
+    display: inline-flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: center;
+
+
+
+    gap: 18px;
+
+
+
+    border: 1px solid var(--purple);
+
+
+
+    border-radius: 5px;
+
+
+
+    background: #ffffff;
+
+
+
+    color: var(--ink);
+
+
+
+    font-size: 12px;
+
+
+
+    font-weight: 700;
+
+
+
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+
+
+}
+
+
+
+.button-dark:hover {
+
+
+
+    background: var(--purple);
+
+
+
+    border-color: var(--purple);
+
+
+
+    color: #ffffff;
+
+
+
+}
+
+
+
+/* SECTION 10: CART / SHIPPING / PAYMENT PROGRESS */
+
+
+
+.checkout-progress {
+
+
+
+    margin: 32px 0 26px;
+
+
+
+    padding: 0 8%;
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: center;
+
+
+
+    gap: 18px;
+
+
+
+}
+
+
+
+.progress-step {
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    gap: 10px;
+
+
+
+    color: #a09aab;
+
+
+
+}
+
+
+
+.progress-number {
+
+
+
+    width: 32px;
+
+
+
+    height: 32px;
+
+
+
+    flex: 0 0 32px;
+
+
+
+    display: inline-flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: center;
+
+
+
+    border: 1px solid #d9d0ef;
+
+
+
+    border-radius: 50%;
+
+
+
+    background: #ffffff;
+
+
+
+    font-size: 12px;
+
+
+
+    font-weight: 700;
+
+
+
+}
+
+
+
+.progress-label {
+
+
+
+    font-size: 12px;
+
+
+
+    font-weight: 700;
+
+
+
+}
+
+
+
+.progress-step.active {
+
+
+
+    color: var(--ink);
+
+
+
+}
+
+
+
+.progress-step.active .progress-number {
+
+
+
+    border-color: var(--purple);
+
+
+
+    background: var(--purple);
+
+
+
+    color: #ffffff;
+
+
+
+}
+
+
+
+.progress-line {
+
+
+
+    width: min(15%, 110px);
+
+
+
+    height: 1px;
+
+
+
+    flex: 0 1 110px;
+
+
+
+    background: var(--line);
+
+
+
+}
+
+
+
+/* SECTION 11: MAIN TWO-COLUMN CART LAYOUT */
+
+
+
+.cart-content {
+
+
+
+    display: grid;
+
+
+
+    grid-template-columns: minmax(0, 1fr) 415px;
+
+
+
+    gap: 28px;
+
+
+
+    align-items: start;
+
+
+
+}
+
+
+
+/* SECTION 12: PRODUCT CARD */
+
+
+
+.cart-items-card {
+
+
+
+    min-width: 0;
+
+
+
+    padding: 32px;
+
+
+
+    border: 1px solid var(--line);
+
+
+
+    border-radius: var(--soft-radius);
+
+
+
+    background: #ffffff;
+
+
+
+}
+
+
+
+.cart-items-header {
+
+
+
+    padding-bottom: 27px;
+
+
+
+    display: flex;
+
+
+
+    align-items: flex-start;
+
+
+
+    justify-content: space-between;
+
+
+
+    gap: 20px;
+
+
+
+    border-bottom: 1px solid var(--line);
+
+
+
+}
+
+
+
+.cart-items-header .eyebrow {
+
+
+
+    margin-bottom: 7px;
+
+
+
+}
+
+
+
+.cart-items-header h2,
+
+
+
+.cart-summary h2 {
+
+
+
+    color: var(--ink);
+
+
+
+    font-family: Georgia, "Times New Roman", serif;
+
+
+
+    font-size: 30px;
+
+
+
+    font-weight: 400;
+
+
+
+    letter-spacing: -0.8px;
+
+
+
+    line-height: 1.2;
+
+
+
+}
+
+
+
+.cart-subtitle,
+
+
+
+.summary-subtitle {
+
+
+
+    margin-top: 9px;
+
+
+
+    color: var(--muted);
+
+
+
+    font-size: 13px;
+
+
+
+}
+
+
+
+.item-count {
+
+
+
+    flex: 0 0 auto;
+
+
+
+    padding: 9px 12px;
+
+
+
+    border-radius: 5px;
+
+
+
+    background: var(--lavender);
+
+
+
+    color: var(--purple-deep);
+
+
+
+    font-size: 11px;
+
+
+
+    font-weight: 700;
+
+
+
+}
+
+
+
+/* SECTION 13: INDIVIDUAL CART ITEM */
+
+
+
+.cart-item {
+
+
+
+    padding: 28px 0;
+
+
+
+    display: grid;
+
+
+
+    grid-template-columns: 138px minmax(0, 1fr) 135px;
+
+
+
+    gap: 24px;
+
+
+
+    align-items: center;
+
+
+
+    border-bottom: 1px solid var(--line);
+
+
+
+}
+
+
+
+/* SECTION 14: PRODUCT IMAGE AND PLACEHOLDER */
+
+
+
+.cart-item-image {
+
+
+
+    width: 138px;
+
+
+
+    height: 155px;
+
+
+
+    position: relative;
+
+
+
+    overflow: hidden;
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: center;
+
+
+
+    border: 1px solid var(--line);
+
+
+
+    border-radius: 6px;
+
+
+
+    background: var(--lavender);
+
+
+
+}
+
+
+
+.cart-item-image img {
+
+
+
+    position: absolute;
+
+
+
+    inset: 0;
+
+
+
+    z-index: 2;
+
+
+
+    width: 100%;
+
+
+
+    height: 100%;
+
+
+
+    object-fit: cover;
+
+
+
+}
+
+
+
+.image-placeholder {
+
+
+
+    position: absolute;
+
+
+
+    inset: 0;
+
+
+
+    display: none;
+
+
+
+    flex-direction: column;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: center;
+
+
+
+    gap: 7px;
+
+
+
+    padding: 10px;
+
+
+
+    color: var(--purple-deep);
+
+
+
+    text-align: center;
+
+
+
+}
+
+
+
+.placeholder-symbol {
+
+
+
+    font-size: 28px;
+
+
+
+}
+
+
+
+.image-placeholder span:last-child {
+
+
+
+    font-size: 9px;
+
+
+
+    font-weight: 700;
+
+
+
+    letter-spacing: 1px;
+
+
+
+}
+
+
+
+/* SECTION 15: PRODUCT DETAILS */
+
+
+
+.cart-item-details {
+
+
+
+    min-width: 0;
+
+
+
+}
+
+
+
+.cart-item-details h3 {
+
+
+
+    margin-bottom: 18px;
+
+
+
+    overflow-wrap: anywhere;
+
+
+
+    color: var(--ink);
+
+
+
+    font-family: Georgia, "Times New Roman", serif;
+
+
+
+    font-size: 24px;
+
+
+
+    font-weight: 400;
+
+
+
+    line-height: 1.3;
+
+
+
+}
+
+
+
+.product-meta-row {
+
+
+
+    display: flex;
+
+
+
+    align-items: stretch;
+
+
+
+    gap: 0;
+
+
+
+    margin-bottom: 17px;
+
+
+
+}
+
+
+
+.product-meta {
+
+
+
+    min-width: 82px;
+
+
+
+    padding: 0 15px;
+
+
+
+    display: flex;
+
+
+
+    flex-direction: column;
+
+
+
+    gap: 4px;
+
+
+
+}
+
+
+
+.product-meta:first-child {
+
+
+
+    padding-left: 0;
+
+
+
+}
+
+
+
+.product-meta + .product-meta {
+
+
+
+    border-left: 1px solid var(--line);
+
+
+
+}
+
+
+
+.product-meta span {
+
+
+
+    color: var(--muted);
+
+
+
+    font-size: 9px;
+
+
+
+    letter-spacing: 1.2px;
+
+
+
+}
+
+
+
+.product-meta strong {
+
+
+
+    color: var(--ink);
+
+
+
+    font-size: 12px;
+
+
+
+    font-weight: 700;
+
+
+
+    overflow-wrap: anywhere;
+
+
+
+}
+
+
+
+.item-price {
+
+
+
+    color: var(--ink);
+
+
+
+    font-size: 14px;
+
+
+
+    font-weight: 800;
+
+
+
+}
+
+
+
+.item-price span {
+
+
+
+    color: var(--muted);
+
+
+
+    font-size: 11px;
+
+
+
+    font-weight: 400;
+
+
+
+}
+
+
+
+.item-subtotal {
+
+
+
+    margin-top: 7px;
+
+
+
+    color: var(--muted);
+
+
+
+    font-size: 12px;
+
+
+
+}
+
+
+
+.item-subtotal strong {
+
+
+
+    color: var(--ink);
+
+
+
+    font-weight: 700;
+
+
+
+}
+
+
+
+/* SECTION 16: QUANTITY AND REMOVE ACTIONS */
+
+
+
+.cart-item-actions {
+
+
+
+    min-width: 0;
+
+
+
+    display: flex;
+
+
+
+    flex-direction: column;
+
+
+
+    align-items: stretch;
+
+
+
+    gap: 10px;
+
+
+
+}
+
+
+
+.quantity-action-form {
+
+
+
+    width: 100%;
+
+
+
+}
+
+
+
+.quantity-label {
+
+
+
+    display: block;
+
+
+
+    margin-bottom: 9px;
+
+
+
+    color: var(--muted);
+
+
+
+    font-size: 9px;
+
+
+
+    font-weight: 700;
+
+
+
+    letter-spacing: 1.2px;
+
+
+
+}
+
+
+
+.quantity-control {
+
+
+
+    width: 100%;
+
+
+
+    min-height: 41px;
+
+
+
+    display: grid;
+
+
+
+    grid-template-columns: 34px minmax(0, 1fr) 34px;
+
+
+
+    overflow: hidden;
+
+
+
+    border: 1px solid var(--line);
+
+
+
+    border-radius: 5px;
+
+
+
+    background: #ffffff;
+
+
+
+}
+
+
+
+.quantity-button {
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: center;
+
+
+
+    border: 0;
+
+
+
+    background: var(--lavender);
+
+
+
+    color: var(--purple-deep);
+
+
+
+    font-size: 17px;
+
+
+
+    transition: background 0.2s ease;
+
+
+
+}
+
+
+
+.quantity-button:hover {
+
+
+
+    background: #d8ccff;
+
+
+
+}
+
+
+
+.quantity-control input {
+
+
+
+    width: 100%;
+
+
+
+    min-width: 0;
+
+
+
+    border: 0;
+
+
+
+    outline: 0;
+
+
+
+    background: #ffffff;
+
+
+
+    color: var(--ink);
+
+
+
+    text-align: center;
+
+
+
+    font-size: 12px;
+
+
+
+    font-weight: 700;
+
+
+
+    -moz-appearance: textfield;
+
+
+
+}
+
+
+
+.quantity-control input::-webkit-inner-spin-button,
+
+
+
+.quantity-control input::-webkit-outer-spin-button {
+
+
+
+    margin: 0;
+
+
+
+    -webkit-appearance: none;
+
+
+
+}
+
+
+
+.update-button {
+
+
+
+    width: 100%;
+
+
+
+    min-height: 40px;
+
+
+
+    margin-top: 8px;
+
+
+
+    border: 1px solid var(--purple);
+
+
+
+    border-radius: 5px;
+
+
+
+    background: #ffffff;
+
+
+
+    color: var(--ink);
+
+
+
+    font-size: 11px;
+
+
+
+    font-weight: 700;
+
+
+
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+
+
+}
+
+
+
+.update-button:hover {
+
+
+
+    background: var(--purple);
+
+
+
+    border-color: var(--purple);
+
+
+
+    color: #ffffff;
+
+
+
+}
+
+
+
+.remove-form {
+
+
+
+    width: 100%;
+
+
+
+}
+
+
+
+.remove-button {
+
+
+
+    width: 100%;
+
+
+
+    min-height: 32px;
+
+
+
+    border: 0;
+
+
+
+    background: transparent;
+
+
+
+    color: #9a3047;
+
+
+
+    font-size: 11px;
+
+
+
+    text-decoration: underline;
+
+
+
+    text-underline-offset: 3px;
+
+
+
+}
+
+
+
+.remove-button:hover {
+
+
+
+    color: #6f1f32;
+
+
+
+}
+
+
+
+/* SECTION 17: CONTINUE SHOPPING */
+
+
+
+.continue-shopping-row {
+
+
+
+    padding-top: 23px;
+
+
+
+}
+
+
+
+.continue-shopping-link {
+
+
+
+    color: var(--purple-deep);
+
+
+
+    font-size: 12px;
+
+
+
+    font-weight: 700;
+
+
+
+    transition: color 0.2s ease;
+
+
+
+}
+
+
+
+.continue-shopping-link:hover {
+
+
+
+    color: var(--purple);
+
+
+
+}
+
+
+
+/* SECTION 18: ORDER SUMMARY CARD */
+
+
+
+.cart-summary {
+
+
+
+    position: sticky;
+
+
+
+    top: 105px;
+
+
+
+    min-width: 0;
+
+
+
+    padding: 32px;
+
+
+
+    border: 1px solid var(--line);
+
+
+
+    border-radius: var(--soft-radius);
+
+
+
+    background: var(--lavender-light, #f7f4ff);
+
+
+
+}
+
+
+
+.cart-summary .eyebrow {
+
+
+
+    margin-bottom: 9px;
+
+
+
+    color: var(--purple-deep);
+
+
+
+}
+
+
+
+.cart-summary h2 {
+
+
+
+    color: var(--ink);
+
+
+
+    font-size: 30px;
+
+
+
+}
+
+
+
+.cart-summary .summary-subtitle {
+
+
+
+    color: var(--muted);
+
+
+
+    line-height: 1.7;
+
+
+
+}
+
+
+
+.cart-summary .summary-row {
+
+
+
+    color: var(--muted);
+
+
+
+}
+
+
+
+.cart-summary .summary-row strong,
+
+
+
+.cart-summary .total-row span,
+
+
+
+.cart-summary .total-row strong {
+
+
+
+    color: var(--ink);
+
+
+
+}
+
+
+
+.cart-summary .summary-note,
+
+
+
+.cart-summary .payment-note {
+
+
+
+    color: var(--muted);
+
+
+
+}
+
+
+
+.cart-summary .summary-divider {
+
+
+
+    background: var(--line);
+
+
+
+}
+
+
+
+.summary-subtitle {
+
+
+
+    line-height: 1.7;
+
+
+
+}
+
+
+
+.summary-divider {
+
+
+
+    width: 100%;
+
+
+
+    height: 1px;
+
+
+
+    margin: 25px 0;
+
+
+
+    background: var(--line);
+
+
+
+}
+
+
+
+/* SECTION 19: SUMMARY ROWS */
+
+
+
+.summary-row {
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: space-between;
+
+
+
+    gap: 18px;
+
+
+
+    color: var(--muted);
+
+
+
+    font-size: 13px;
+
+
+
+}
+
+
+
+.summary-row strong {
+
+
+
+    color: var(--ink);
+
+
+
+    font-size: 13px;
+
+
+
+    font-weight: 700;
+
+
+
+}
+
+
+
+.total-row {
+
+
+
+    align-items: flex-start;
+
+
+
+}
+
+
+
+.total-row span {
+
+
+
+    padding-top: 5px;
+
+
+
+    color: var(--ink);
+
+
+
+    font-size: 13px;
+
+
+
+    font-weight: 700;
+
+
+
+}
+
+
+
+.total-row strong {
+
+
+
+    color: var(--purple-deep);
+
+
+
+    font-size: clamp(20px, 2vw, 27px);
+
+
+
+    font-weight: 800;
+
+
+
+    letter-spacing: -0.7px;
+
+
+
+    line-height: 1.2;
+
+
+
+    text-align: right;
+
+
+
+    overflow-wrap: anywhere;
+
+
+
+}
+
+
+
+.summary-note {
+
+
+
+    margin-top: 24px;
+
+
+
+    color: var(--muted);
+
+
+
+    font-size: 11px;
+
+
+
+    line-height: 1.7;
+
+
+
+}
+
+
+
+/* SECTION 20: PROCEED TO CHECKOUT BUTTON */
+
+
+
+.checkout-button {
+
+
+
+    width: 100%;
+
+
+
+    min-height: 56px;
+
+
+
+    margin-top: 22px;
+
+
+
+    padding: 12px 17px;
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: space-between;
+
+
+
+    gap: 14px;
+
+
+
+    border: 1px solid var(--purple);
+
+
+
+    border-radius: 5px;
+
+
+
+    background: #ffffff;
+
+
+
+    color: var(--ink);
+
+
+
+    font-size: 12px;
+
+
+
+    font-weight: 700;
+
+
+
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+
+
+}
+
+
+
+.checkout-button:hover {
+
+
+
+    background: var(--purple);
+
+
+
+    border-color: var(--purple);
+
+
+
+    color: #ffffff;
+
+
+
+}
+
+
+
+.checkout-arrow {
+
+
+
+    font-size: 19px;
+
+
+
+}
+
+
+
+/* SECTION 21: PAYMENT NOTE */
+
+
+
+.payment-note {
+
+
+
+    margin-top: 18px;
+
+
+
+    display: flex;
+
+
+
+    align-items: flex-start;
+
+
+
+    gap: 9px;
+
+
+
+    color: var(--muted);
+
+
+
+    font-size: 11px;
+
+
+
+    line-height: 1.6;
+
+
+
+}
+
+
+
+.payment-icon {
+
+
+
+    color: var(--purple);
+
+
+
+    font-size: 15px;
+
+
+
+}
+
+
+
+/* SECTION 22: FOOTER */
+
+
+
+.site-footer {
+
+
+
+    padding: 65px 32px 0;
+
+
+
+    background: #f7f4ff;
+
+
+
+}
+
+
+
+.footer-main {
+
+
+
+    display: grid;
+
+
+
+    grid-template-columns: 1.2fr 0.7fr 0.9fr 1fr;
+
+
+
+    gap: 40px;
+
+
+
+    width: min(100%, var(--page-width));
+
+
+
+    margin: 0 auto;
+
+
+
+    padding-bottom: 55px;
+
+
+
+}
+
+
+
+.footer-logo {
+
+
+
+    font-size: 27px;
+
+
+
+}
+
+
+
+.footer-brand p,
+
+
+
+.footer-note p {
+
+
+
+    color: var(--muted);
+
+
+
+    font-size: 11px;
+
+
+
+    line-height: 1.8;
+
+
+
+}
+
+
+
+.footer-column {
+
+
+
+    display: flex;
+
+
+
+    flex-direction: column;
+
+
+
+    align-items: flex-start;
+
+
+
+    gap: 12px;
+
+
+
+}
+
+
+
+.footer-column h3 {
+
+
+
+    margin: 5px 0 8px;
+
+
+
+    color: var(--ink);
+
+
+
+    font-size: 10px;
+
+
+
+    letter-spacing: 1.5px;
+
+
+
+}
+
+
+
+.footer-column a,
+
+
+
+.footer-note a {
+
+
+
+    color: #625a72;
+
+
+
+    font-size: 11px;
+
+
+
+    transition: color 0.2s ease;
+
+
+
+}
+
+
+
+.footer-column a:hover,
+
+
+
+.footer-note a:hover {
+
+
+
+    color: var(--purple);
+
+
+
+}
+
+
+
+.footer-note > span {
+
+
+
+    color: var(--purple);
+
+
+
+    font-size: 9px;
+
+
+
+    font-weight: 700;
+
+
+
+    letter-spacing: 1.5px;
+
+
+
+}
+
+
+
+.footer-bottom {
+
+
+
+    display: flex;
+
+
+
+    align-items: center;
+
+
+
+    justify-content: space-between;
+
+
+
+    gap: 20px;
+
+
+
+    width: min(100%, var(--page-width));
+
+
+
+    margin: 0 auto;
+
+
+
+    padding: 22px 0;
+
+
+
+    border-top: 1px solid var(--line);
+
+
+
+    color: var(--muted);
+
+
+
+    font-size: 10px;
+
+
+
+}
+
+
+
+.footer-bottom a {
+
+
+
+    color: var(--purple-deep);
+
+
+
+}
+
+
+
+.footer-bottom a:hover {
+
+
+
+    color: var(--purple);
+
+
+
+}
+
+
+
+/* SECTION 23: MEDIUM DESKTOP AND TABLET */
+
+
+
+@media (max-width: 1100px) {
+
+
+
+    .cart-content {
+
+
+
+        grid-template-columns: minmax(0, 1fr) 340px;
+
+
+
+        gap: 20px;
+
+
+
+    }
+
+
+
+    .cart-items-card,
+
+
+
+    .cart-summary {
+
+
+
+        padding: 25px;
+
+
+
+    }
+
+
+
+    .cart-item {
+
+
+
+        grid-template-columns: 110px minmax(0, 1fr) 120px;
+
+
+
+        gap: 17px;
+
+
+
+    }
+
+
+
+    .cart-item-image {
+
+
+
+        width: 110px;
+
+
+
+        height: 135px;
+
+
+
+    }
+
+
+
+    .cart-item-details h3 {
+
+
+
+        font-size: 21px;
+
+
+
+    }
+
+
+
+    .footer-main {
+
+
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+
+
+    }
+
+
+
+}
+
+
+
+/* SECTION 24: SMALL TABLET */
+
+
+
+@media (max-width: 850px) {
+
+
+
+    .cart-page {
+
+
+
+        width: min(calc(100% - 40px), var(--page-width));
+
+
+
+        margin-top: 30px;
+
+
+
+    }
+
+
+
+    .cart-hero {
+
+
+
+        min-height: 235px;
+
+
+
+        padding: 38px;
+
+
+
+    }
+
+
+
+    .cart-content {
+
+
+
+        grid-template-columns: minmax(0, 1fr);
+
+
+
+    }
+
+
+
+    .cart-summary {
+
+
+
+        position: static;
+
+
+
+    }
+
+
+
+    .cart-item {
+
+
+
+        grid-template-columns: 120px minmax(0, 1fr) 125px;
+
+
+
+    }
+
+
+
+    .cart-item-image {
+
+
+
+        width: 120px;
+
+
+
+        height: 140px;
+
+
+
+    }
+
+
+
+    .benefits-strip {
+
+
+
+        padding: 15px 24px;
+
+
+
+        gap: 14px;
+
+
+
+    }
+
+
+
+    .benefit-item {
+
+
+
+        gap: 8px;
+
+
+
+    }
+
+
+
+    .benefit-item strong {
+
+
+
+        font-size: 9px;
+
+
+
+        letter-spacing: 0.7px;
+
+
+
+    }
+
+
+
+    .benefit-item div span {
+
+
+
+        font-size: 10px;
+
+
+
+    }
+
+
+
+}
+
+
+
+/* SECTION 25: MOBILE */
+
+
+
+@media (max-width: 600px) {
+
+
+
+    .navbar {
+
+
+
+        width: calc(100% - 36px);
+
+
+
+        min-height: 72px;
+
+
+
+    }
+
+
+
+    .logo {
+
+
+
+        font-size: 27px;
+
+
+
+    }
+
+
+
+    .nav-actions {
+
+
+
+        gap: 15px;
+
+
+
+    }
+
+
+
+    .nav-text,
+
+
+
+    .profile-link {
+
+
+
+        gap: 5px;
+
+
+
+        font-size: 11px;
+
+
+
+    }
+
+
+
+    .nav-icon {
+
+
+
+        font-size: 20px;
+
+
+
+    }
+
+
+
+    .profile-dp {
+
+
+
+        width: 31px;
+
+
+
+        height: 31px;
+
+
+
+        flex-basis: 31px;
+
+
+
+    }
+
+
+
+    .benefits-strip {
+
+
+
+        padding: 16px 18px;
+
+
+
+        flex-direction: column;
+
+
+
+        align-items: stretch;
+
+
+
+        gap: 15px;
+
+
+
+    }
+
+
+
+    .benefit-item {
+
+
+
+        justify-content: flex-start;
+
+
+
+    }
+
+
+
+    .benefit-divider {
+
+
+
+        width: 100%;
+
+
+
+        height: 1px;
+
+
+
+        flex-basis: 1px;
+
+
+
+    }
+
+
+
+    .cart-page {
+
+
+
+        width: calc(100% - 32px);
+
+
+
+        margin: 25px auto 55px;
+
+
+
+    }
+
+
+
+    .cart-hero {
+
+
+
+        min-height: 210px;
+
+
+
+        padding: 30px 23px;
+
+
+
+    }
+
+
+
+    .cart-hero h1 {
+
+
+
+        font-size: 43px;
+
+
+
+    }
+
+
+
+    .hero-description {
+
+
+
+        max-width: 280px;
+
+
+
+        font-size: 13px;
+
+
+
+    }
+
+
+
+    .hero-watermark {
+
+
+
+        right: 8px;
+
+
+
+        bottom: -45px;
+
+
+
+        font-size: 150px;
+
+
+
+    }
+
+
+
+    .checkout-progress {
+
+
+
+        padding: 0;
+
+
+
+        gap: 9px;
+
+
+
+    }
+
+
+
+    .progress-step {
+
+
+
+        gap: 6px;
+
+
+
+    }
+
+
+
+    .progress-number {
+
+
+
+        width: 28px;
+
+
+
+        height: 28px;
+
+
+
+        flex-basis: 28px;
+
+
+
+        font-size: 11px;
+
+
+
+    }
+
+
+
+    .progress-label {
+
+
+
+        font-size: 11px;
+
+
+
+    }
+
+
+
+    .progress-line {
+
+
+
+        width: auto;
+
+
+
+        flex: 1 1 20px;
+
+
+
+    }
+
+
+
+    .cart-items-card,
+
+
+
+    .cart-summary {
+
+
+
+        padding: 21px;
+
+
+
+    }
+
+
+
+    .cart-items-header {
+
+
+
+        gap: 12px;
+
+
+
+    }
+
+
+
+    .cart-items-header h2,
+
+
+
+    .cart-summary h2 {
+
+
+
+        font-size: 26px;
+
+
+
+    }
+
+
+
+    .cart-subtitle,
+
+
+
+    .summary-subtitle {
+
+
+
+        font-size: 12px;
+
+
+
+    }
+
+
+
+    .item-count {
+
+
+
+        padding: 7px 9px;
+
+
+
+        font-size: 10px;
+
+
+
+    }
+
+
+
+    .cart-item {
+
+
+
+        grid-template-columns: 85px minmax(0, 1fr);
+
+
+
+        gap: 14px;
+
+
+
+        align-items: start;
+
+
+
+        padding: 22px 0;
+
+
+
+    }
+
+
+
+    .cart-item-image {
+
+
+
+        width: 85px;
+
+
+
+        height: 105px;
+
+
+
+    }
+
+
+
+    .cart-item-details h3 {
+
+
+
+        margin-bottom: 12px;
+
+
+
+        font-size: 18px;
+
+
+
+    }
+
+
+
+    .product-meta-row {
+
+
+
+        margin-bottom: 12px;
+
+
+
+    }
+
+
+
+    .product-meta {
+
+
+
+        min-width: 65px;
+
+
+
+        padding: 0 9px;
+
+
+
+    }
+
+
+
+    .product-meta strong {
+
+
+
+        font-size: 11px;
+
+
+
+    }
+
+
+
+    .item-price {
+
+
+
+        font-size: 12px;
+
+
+
+    }
+
+
+
+    .item-subtotal {
+
+
+
+        font-size: 11px;
+
+
+
+    }
+
+
+
+    /* SECTION: CART ITEM ACTIONS */
+
+.cart-item-actions {
+
+    grid-column: 1 / -1;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    align-items: end;
+
+    gap: 13px;
+
+    margin-top: 3px;
+
+}
+
+
+
+    .quantity-label {
+
+
+
+        margin-bottom: 6px;
+
+
+
+    }
+
+
+
+    .quantity-control {
+
+
+
+        grid-template-columns: 34px minmax(0, 1fr) 34px;
+
+
+
+    }
+
+
+
+    .update-button {
+
+
+
+        min-height: 37px;
+
+
+
+    }
+
+
+
+    .remove-form {
+
+
+
+        align-self: end;
+
+
+
+    }
+
+
+
+    .remove-button {
+
+
+
+        min-height: 37px;
+
+
+
+        border: 1px solid var(--line);
+
+
+
+        border-radius: 5px;
+
+
+
+        text-decoration: none;
+
+
+
+    }
+
+
+
+    .summary-divider {
+
+
+
+        margin: 20px 0;
+
+
+
+    }
+
+
+
+    .total-row strong {
+
+
+
+        font-size: 22px;
+
+
+
+    }
+
+
+
+    .site-footer {
+
+
+
+        padding: 40px 22px 0;
+
+
+
+    }
+
+
+
+    .footer-main {
+
+
+
+        grid-template-columns: minmax(0, 1fr);
+
+
+
+        gap: 28px;
+
+
+
+        padding-bottom: 35px;
+
+
+
+    }
+
+
+
+    .footer-bottom {
+
+
+
+        flex-wrap: wrap;
+
+
+
+        gap: 12px;
+
+
+
+        padding: 18px 0;
+
+
+
+        line-height: 1.6;
+
+
+
+    }
+
+
+
+}
+
+
+
+/* SECTION 26: VERY SMALL MOBILE */
+
+
+
+@media (max-width: 380px) {
+
+
+
+    .nav-actions {
+
+
+
+        gap: 10px;
+
+
+
+    }
+
+
+
+    .nav-text,
+
+
+
+    .profile-link {
+
+
+
+        font-size: 10px;
+
+
+
+    }
+
+
+
+    .cart-items-card,
+
+
+
+    .cart-summary {
+
+
+
+        padding: 16px;
+
+
+
+    }
+
+
+
+    .cart-item {
+
+
+
+        grid-template-columns: 72px minmax(0, 1fr);
+
+
+
+        gap: 11px;
+
+
+
+    }
+
+
+
+    .cart-item-image {
+
+
+
+        width: 72px;
+
+
+
+        height: 90px;
+
+
+
+    }
+
+
+
+    .cart-item-details h3 {
+
+
+
+        font-size: 16px;
+
+
+
+    }
+
+
+
+    .cart-item-actions {
+
+
+
+        grid-template-columns: minmax(0, 1fr);
+
+
+
+    }
+
+
+
+}
+
+
+
+/* =========================================
+
+
+
+   CART PAGE — SOFTER LAVENDER THEME
+
+
+
+   Keep existing layout and sizing unchanged
+
+
+
+   ========================================= */
+
+
+
+/* SECTION 7: CART BANNER IMAGE */
+
+
+
+.cart-hero {
+
+
+
+    position: relative;
+
+
+
+    overflow: hidden;
+
+
+
+    /* Replace .jpg with the actual extension of your image */
+
+
+
+    background-image:
+
+
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(24, 20, 30, 0.48),
+
+            rgba(24, 20, 30, 0.12)
+
+        ),
+
+        url("../images/categories/cart-page.jpg");
+
+
+
+    background-size: cover;
+
+
+
+    background-position: center;
+
+
+
+    background-repeat: no-repeat;
+
+
+
+    border-color: #e5def5;
+
+
+
+}
+
+
+
+/* Make banner text readable over the image */
+
+
+
+.cart-hero .cart-hero-content {
+
+
+
+    position: relative;
+
+
+
+    z-index: 2;
+
+
+
+}
+
+
+
+.cart-hero .eyebrow,
+
+
+
+.cart-hero h1,
+
+
+
+.cart-hero .title-dot,
+
+
+
+.cart-hero .hero-description {
+
+
+
+    color: #ffffff;
+
+
+
+}
+
+
+
+/* Subtle watermark over the image */
+
+
+
+.cart-hero .hero-watermark {
+
+
+
+    color: rgba(255, 255, 255, 0.16);
+
+
+
+    z-index: 1;
+
+
+
+    pointer-events: none;
+
+
+
+}
+
+
+
+/* SECTION 5: BENEFITS STRIP */
+
+
+
+.benefits-strip {
+
+
+
+    background: #f5f1ff;
+
+
+
+    color: #292333;
+
+
+
+    border-top: 1px solid #e6defa;
+
+
+
+    border-bottom: 1px solid #e6defa;
+
+
+
+}
+
+
+
+.benefit-item strong {
+
+
+
+    color: #292333;
+
+
+
+}
+
+
+
+.benefit-item div span {
+
+
+
+    color: #716a7b;
+
+
+
+}
+
+
+
+.benefit-icon {
+
+
+
+    color: #6c55c7;
+
+
+
+    border-color: #d8cef7;
+
+
+
+    background: #ffffff;
+
+
+
+}
+
+
+
+.benefit-divider {
+
+
+
+    background: #ded5f3;
+
+
+
+}
+
+
+
+/* SECTION 12: ITEM COUNT */
+
+
+
+.item-count {
+
+
+
+    background: #f5f1ff;
+
+
+
+    color: #51456f;
+
+
+
+    border: 1px solid #e5def5;
+
+
+
+}
+
+
+
+/* SECTION 16: QUANTITY CONTROLS */
+
+
+
+.quantity-control {
+
+
+
+    background: #ffffff;
+
+
+
+    border-color: #ded8e9;
+
+
+
+}
+
+
+
+.quantity-button {
+
+
+
+    background: #ffffff;
+
+
+
+    color: #292333;
+
+
+
+    transition: background 0.2s ease, color 0.2s ease;
+
+
+
+}
+
+
+
+.quantity-button:hover {
+
+
+
+    background: #f0ebff;
+
+
+
+    color: #5433eb;
+
+
+
+}
+
+
+
+/* Update button: neutral until hover */
+
+
+
+.update-button {
+
+
+
+    background: #ffffff;
+
+
+
+    border-color: #d9d0ef;
+
+
+
+    color: #292333;
+
+
+
+}
+
+
+
+.update-button:hover {
+
+
+
+    background: #5433eb;
+
+
+
+    border-color: #5433eb;
+
+
+
+    color: #ffffff;
+
+
+
+}
+
+
+
+/* SECTION 9: EMPTY CART BUTTON */
+
+
+
+.button-dark {
+
+
+
+    background: #ffffff;
+
+
+
+    border: 1px solid #d9d0ef;
+
+
+
+    color: #292333;
+
+
+
+}
+
+
+
+.button-dark:hover {
+
+
+
+    background: #5433eb;
+
+
+
+    border-color: #5433eb;
+
+
+
+    color: #ffffff;
+
+
+
+}
+
+
+
+/* SECTION 20: CHECKOUT BUTTON */
+
+
+
+.checkout-button {
+
+
+
+    background: #ffffff;
+
+
+
+    border-color: #d9d0ef;
+
+
+
+    color: #292333;
+
+
+
+}
+
+
+
+.checkout-button:hover {
+
+
+
+    background: #5433eb;
+
+
+
+    border-color: #5433eb;
+
+
+
+    color: #ffffff;
+
+
+
+}
+
+
+
+/* SECTION 18: ORDER SUMMARY */
+
+
+
+.cart-summary {
+
+
+
+    background: #faf8ff;
+
+
+
+    border-color: #e5def5;
+
+
+
+}
+
+
+
+.cart-summary .summary-divider {
+
+
+
+    background: #e5def5;
+
+
+
+}
+
+
+
+/* Keep the total readable without a bright accent */
+
+
+
+.total-row strong {
+
+
+
+    color: #292333;
+
+
+
+}
+
+
+
+/* FINAL OVERRIDE: BENEFITS STRIP AND FOOTER — LIGHT LAVENDER THEME */
+
+body .benefits-strip {
+    background: #ffffff !important;
+    color: #25232a !important;
+    border-top: 1px solid #eee9ff !important;
+    border-bottom: 1px solid #eee9ff !important;
+}
+body .benefit-item strong { color: #25232a !important; }
+body .benefit-item div span { color: #77718a !important; }
+body .benefit-icon {
+    color: #6549d8 !important;
+    border: 1px solid #ded6ff !important;
+    background: #f7f4ff !important;
+}
+body .benefit-divider { background: #e7e0fa !important; }
+
+body .site-footer,
+body .cart-footer {
+    background: #f5f1ff !important;
+    color: #25232a !important;
+    border-top: 1px solid #e2d8ff !important;
+}
+body .site-footer .footer-logo,
+body .cart-footer .footer-logo { color: #25232a !important; }
+body .site-footer .footer-logo span,
+body .cart-footer .footer-logo span { color: #5635ed !important; }
+body .site-footer .footer-brand p,
+body .site-footer .footer-note p,
+body .cart-footer .footer-brand p,
+body .cart-footer .footer-note p { color: #77718a !important; }
+body .site-footer .footer-column h3,
+body .cart-footer .footer-column h3,
+body .cart-footer h4 { color: #25232a !important; }
+body .site-footer .footer-column a,
+body .site-footer .footer-note a,
+body .cart-footer .footer-links a,
+body .cart-footer a { color: #69647a !important; }
+body .site-footer .footer-column a:hover,
+body .site-footer .footer-note a:hover,
+body .site-footer .footer-bottom a:hover,
+body .cart-footer a:hover { color: #5635ed !important; }
+body .site-footer .footer-note > span,
+body .cart-footer .footer-tagline { color: #5635ed !important; }
+body .site-footer .footer-bottom,
+body .cart-footer .footer-bottom {
+    border-top: 1px solid #ded6ff !important;
+    color: #77718a !important;
+}
+body .site-footer .footer-bottom a,
+body .cart-footer .footer-bottom a { color: #25232a !important; }
+
+/* Keep the purple accent subtle on checkout progress */
+/*SECTION 27: CUSTOMER BENEFITS STRIP
+
+   Clean white background with subtle lavender accents
+
+   ========================================================= */
+
+
+
+.benefits-strip {
+
+    min-height: 82px;
+
+    margin-top: 0;
+
+    padding: 20px max(32px, calc((100% - var(--page-width)) / 2));
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    background: #ffffff;
+
+    color: #25232a;
+
+    border-top: 1px solid #eee9ff;
+
+    border-bottom: 1px solid #eee9ff;
+
+}
+
+
+
+.benefit-item {
+
+    display: flex;
+
+    flex: 1;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+}
+
+
+
+.benefit-icon {
+
+    width: 34px;
+
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #ded6ff;
+
+    border-radius: 50%;
+
+    background: #f7f4ff;
+
+    color: #6549d8;
+
+    font-size: 17px;
+
+}
+
+
+
+.benefit-item div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+
+
+.benefit-item strong {
+
+    color: #25232a;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+
+.benefit-item div span {
+
+    color: #77718a;
+
+    font-size: 11px;
+
+}
+
+
+
+.benefit-divider {
+
+    width: 1px;
+
+    height: 32px;
+
+    flex: 0 0 1px;
+
+    background: #e7e0fa;
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 28: FOOTER
+
+   Matches the EasyBuy product-details reference
+
+   ========================================================= */
+
+
+
+.site-footer {
+
+    width: 100%;
+
+    margin-top: 40px;
+
+    padding: 65px 32px 0;
+
+    background: #f5f1ff;
+
+    color: #25232a;
+
+}
+
+
+
+.footer-main {
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.7fr 0.9fr 1fr;
+
+    gap: 40px;
+
+    width: min(100%, var(--page-width));
+
+    margin: 0 auto;
+
+    padding-bottom: 55px;
+
+}
+
+
+
+.footer-logo {
+
+    display: inline-block;
+
+    color: #25232a;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+}
+
+
+
+.footer-logo span {
+
+    color: #5635ed;
+
+}
+
+
+
+.footer-brand p,
+
+.footer-note p {
+
+    color: #77718a;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+}
+
+
+
+.footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+}
+
+
+
+.footer-column h3 {
+
+    margin: 5px 0 8px;
+
+    color: #25232a;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+
+.footer-column a,
+
+.footer-note a {
+
+    color: #69647a;
+
+    font-size: 11px;
+
+    transition: color 0.2s ease;
+
+}
+
+
+
+.footer-column a:hover,
+
+.footer-note a:hover {
+
+    color: #5635ed;
+
+}
+
+
+
+.footer-note > span {
+
+    color: #5635ed;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+
+.footer-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    width: min(100%, var(--page-width));
+
+    margin: 0 auto;
+
+    padding: 22px 0;
+
+    border-top: 1px solid #ded6ff;
+
+    color: #77718a;
+
+    font-size: 10px;
+
+}
+
+
+
+.footer-bottom a {
+
+    color: #25232a;
+
+    transition: color 0.2s ease;
+
+}
+
+
+
+.footer-bottom a:hover {
+
+    color: #5635ed;
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 29: TABLET RESPONSIVE FOOTER AND BENEFITS
+
+   ========================================================= */
+
+
+
+@media (max-width: 1100px) {
+
+    .footer-main {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+
+@media (max-width: 850px) {
+
+    .benefits-strip {
+
+        padding: 18px 24px;
+
+        gap: 14px;
+
+    }
+
+
+
+    .benefit-item {
+
+        gap: 8px;
+
+    }
+
+
+
+    .benefit-item strong {
+
+        font-size: 9px;
+
+        letter-spacing: 0.6px;
+
+    }
+
+
+
+    .benefit-item div span {
+
+        font-size: 10px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 30: MOBILE RESPONSIVE FOOTER AND BENEFITS
+
+   ========================================================= */
+
+
+
+@media (max-width: 600px) {
+
+    .benefits-strip {
+
+        padding: 20px 22px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 16px;
+
+    }
+
+
+
+    .benefit-item {
+
+        justify-content: flex-start;
+
+    }
+
+
+
+    .benefit-divider {
+
+        width: 100%;
+
+        height: 1px;
+
+        flex-basis: 1px;
+
+    }
+
+
+
+    .site-footer {
+
+        margin-top: 30px;
+
+        padding: 40px 22px 0;
+
+    }
+
+
+
+    .footer-main {
+
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 28px;
+
+        padding-bottom: 35px;
+
+    }
+
+
+
+    .footer-bottom {
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+
+        padding: 18px 0;
+
+        line-height: 1.6;
+
+    }
+
+}
+
+
+/* FINAL BENEFITS STRIP OVERRIDE */
+body .benefits-strip {
+    
+	background-color: #9675ce !important;
+    background-image: none !important;
+    color: #292333 !important;
+    border-top: 1px solid #ded2ff !important;
+    border-bottom: 1px solid #ded2ff !important;
+}
+
+body .benefit-item strong {
+    color: #292333 !important;
+}
+
+body .benefit-item div span {
+    color: #716a7b !important;
+}
+
+body .benefit-icon {
+    background-color: #ffffff !important;
+    color: #6549d8 !important;
+    border: 1px solid #d8cef7 !important;
+}
+
+body .benefit-divider {
+    background-color: #d8cef7 !important;
+}

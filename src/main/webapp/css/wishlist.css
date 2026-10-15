@@ -1,0 +1,2773 @@
+/* =========================================================
+
+      EASYBUY - WISHLIST PAGE
+
+      Complete CSS matched to wishlist.jsp
+
+      Theme: purple, deep purple, lavender, white and soft ivory
+
+      ========================================================= */
+
+
+
+
+
+/* =========================================================
+
+      1. GLOBAL STYLES
+
+      ========================================================= */
+
+
+
+:root {
+
+       --ink: #242127;
+
+       --paper: #ffffff;
+
+       --cream: #F4F0FF;
+
+       --sand: #E9E2FF;
+
+       --taupe: #6C55C7;
+
+       --muted: #706B7A;
+
+       --line: #E3DDF0;
+
+       --accent: #6C55C7;
+
+       --footer-bg: #FCFBF8;
+
+       --max-width: 1420px;
+
+}
+
+
+
+* {
+
+       margin: 0;
+
+       padding: 0;
+
+       box-sizing: border-box;
+
+}
+
+
+
+html {
+
+       scroll-behavior: smooth;
+
+}
+
+
+
+body {
+
+       min-height: 100vh;
+
+       background: var(--paper);
+
+       color: var(--ink);
+
+       font-family: Arial, Helvetica, sans-serif;
+
+       -webkit-font-smoothing: antialiased;
+
+}
+
+
+
+a {
+
+       color: inherit;
+
+       text-decoration: none;
+
+}
+
+
+
+button,
+
+input {
+
+       font: inherit;
+
+}
+
+
+
+button {
+
+       cursor: pointer;
+
+}
+
+
+
+img,
+
+svg {
+
+       display: block;
+
+}
+
+
+
+a:focus-visible,
+
+button:focus-visible {
+
+       outline: 2px solid var(--taupe);
+
+       outline-offset: 3px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+      2. NAVBAR
+
+      Matches the cart page:
+
+      logo at the left, Cart and Profile at the right
+
+      ========================================================= */
+
+
+
+.navbar {
+
+       position: sticky;
+
+       top: 0;
+
+       z-index: 1000;
+
+
+
+       width: 100%;
+
+       height: 88px;
+
+       padding: 0 3%;
+
+
+
+       display: flex;
+
+       align-items: center;
+
+       justify-content: space-between;
+
+
+
+       background: #ffffff;
+
+       border-bottom: 1px solid #E3DDF0;
+
+}
+
+
+
+.logo {
+
+       display: inline-flex;
+
+       align-items: center;
+
+       flex-shrink: 0;
+
+
+
+       color: var(--ink);
+
+       font-family: Georgia, "Times New Roman", serif;
+
+       font-size: 32px;
+
+       font-weight: 700;
+
+       letter-spacing: -1.8px;
+
+       line-height: 1;
+
+}
+
+
+
+.logo span {
+
+       color: var(--accent);
+
+}
+
+
+
+.nav-actions {
+
+       display: flex;
+
+       align-items: center;
+
+       justify-content: flex-end;
+
+       gap: 28px;
+
+       margin-left: auto;
+
+}
+
+
+
+.cart-nav-link,
+
+.profile-nav-link {
+
+       display: inline-flex;
+
+       align-items: center;
+
+       justify-content: center;
+
+       gap: 9px;
+
+
+
+       min-height: 42px;
+
+
+
+       color: var(--ink);
+
+       font-size: 13px;
+
+       font-weight: 700;
+
+       white-space: nowrap;
+
+
+
+       transition: color 0.2s ease;
+
+}
+
+
+
+.cart-nav-link svg {
+
+       width: 19px;
+
+       height: 19px;
+
+       flex-shrink: 0;
+
+
+
+       fill: none;
+
+       stroke: currentColor;
+
+       stroke-width: 2;
+
+       stroke-linecap: round;
+
+       stroke-linejoin: round;
+
+}
+
+
+
+.cart-nav-link:hover,
+
+.profile-nav-link:hover {
+
+       color: var(--taupe);
+
+}
+
+
+
+.profile-dp {
+
+       width: 42px;
+
+       height: 42px;
+
+       flex: 0 0 42px;
+
+
+
+       display: inline-flex;
+
+       align-items: center;
+
+       justify-content: center;
+
+
+
+       border-radius: 50%;
+
+       background: var(--cream);
+
+       color: var(--ink);
+
+
+
+       font-size: 13px;
+
+       font-weight: 700;
+
+}
+
+
+
+.profile-text {
+
+       display: inline-block;
+
+}
+
+
+
+
+
+/* =========================================================
+
+      3. MAIN PAGE CONTAINER
+
+      ========================================================= */
+
+
+
+.wishlist-page {
+
+       width: min(var(--max-width), calc(100% -    96px));
+
+       margin: 42px auto 80px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+      4. WISHLIST TOP BANNER
+
+      Matches the existing banner size with the EasyBuy purple/lavender palette
+
+      ========================================================= */
+
+
+
+.wishlist-header {
+
+       position: relative;
+
+       isolation: isolate;
+
+       overflow: hidden;
+
+
+
+       min-height: 294px;
+
+       padding: 42px 4.2%;
+
+
+
+       display: flex;
+
+       align-items: center;
+
+       justify-content: space-between;
+
+
+
+       border: 1px solid #3921A7;
+
+       border-radius: 12px;
+
+
+
+       background:
+
+           linear-gradient(
+
+               115deg,
+
+               #5433EB 0%,
+
+               #4529C6 58%,
+
+               #3921A7 100%
+
+           );
+
+
+
+       color: #ffffff;
+
+}
+
+
+
+.wishlist-header-content {
+
+       position: relative;
+
+       z-index: 2;
+
+       max-width: 680px;
+
+}
+
+
+
+.wishlist-eyebrow {
+
+       display: block;
+
+       margin-bottom: 18px;
+
+
+
+       color: #E9E2FF;
+
+       font-size: 12px;
+
+       font-weight: 800;
+
+       letter-spacing: 2px;
+
+       line-height: 1.5;
+
+}
+
+
+
+.wishlist-header h1 {
+
+       margin: 0 0 20px;
+
+
+
+       color: #ffffff;
+
+       font-family: Georgia, "Times New Roman", serif;
+
+       font-size: clamp(48px, 5vw, 72px);
+
+       font-weight: 400;
+
+       letter-spacing: -2.8px;
+
+       line-height: 1.04;
+
+}
+
+
+
+.wishlist-header h1 span {
+
+       color: #ffffff;
+
+}
+
+
+
+.wishlist-header p {
+
+       max-width: 540px;
+
+
+
+       color: #F4F0FF;
+
+       font-size: 16px;
+
+       line-height: 1.8;
+
+}
+
+
+
+.wishlist-heart {
+
+       position: relative;
+
+       z-index: 2;
+
+
+
+       width: 94px;
+
+       height: 94px;
+
+       flex: 0 0 94px;
+
+       margin-right: 8%;
+
+
+
+       display: flex;
+
+       align-items: center;
+
+       justify-content: center;
+
+
+
+       border: 1px solid rgba(255, 255, 255, 0.48);
+
+       border-radius: 50%;
+
+       background: rgba(255, 255, 255, 0.035);
+
+
+
+       color: #ffffff;
+
+       font-family: Georgia, "Times New Roman", serif;
+
+       font-size: 57px;
+
+       font-weight: 400;
+
+}
+
+
+
+.wishlist-banner-mark {
+
+       position: absolute;
+
+       z-index: 0;
+
+       right: 28px;
+
+       bottom: -112px;
+
+
+
+       color: rgba(255, 255, 255, 0.09);
+
+       font-family: Georgia, "Times New Roman", serif;
+
+       font-size: 300px;
+
+       font-weight: 700;
+
+       letter-spacing: -24px;
+
+       line-height: 1;
+
+
+
+       pointer-events: none;
+
+       user-select: none;
+
+}
+
+
+
+
+
+/* =========================================================
+
+      5. SUCCESS AND ERROR MESSAGES
+
+      ========================================================= */
+
+
+
+.wishlist-message {
+
+       margin-top: 20px;
+
+       padding: 15px 18px;
+
+
+
+       border-radius: 8px;
+
+       font-size: 13px;
+
+       line-height: 1.6;
+
+}
+
+
+
+.wishlist-success {
+
+       border: 1px solid #D6E8D9;
+
+       background: #EEF8F0;
+
+       color: #315B3A;
+
+}
+
+
+
+.wishlist-error {
+
+       border: 1px solid #F0D5D8;
+
+       background: #FFF0F1;
+
+       color: #8C3542;
+
+}
+
+
+
+
+
+/* =========================================================
+
+      6. WISHLIST HEADING AND ITEM COUNT
+
+      ========================================================= */
+
+
+
+.wishlist-topbar {
+
+       display: flex;
+
+       align-items: flex-end;
+
+       justify-content: space-between;
+
+       gap: 24px;
+
+
+
+       margin-top: 54px;
+
+       padding-bottom: 24px;
+
+
+
+       border-bottom: 1px solid var(--line);
+
+}
+
+
+
+.wishlist-heading {
+
+       min-width: 0;
+
+}
+
+
+
+.section-eyebrow {
+
+       display: block;
+
+       margin-bottom: 9px;
+
+
+
+       color: var(--taupe);
+
+       font-size: 12px;
+
+       font-weight: 800;
+
+       letter-spacing: 2px;
+
+       line-height: 1.5;
+
+}
+
+
+
+.wishlist-heading h2 {
+
+       margin-bottom: 9px;
+
+
+
+       color: var(--ink);
+
+       font-family: Georgia, "Times New Roman", serif;
+
+       font-size: 34px;
+
+       font-weight: 400;
+
+       letter-spacing: -1.1px;
+
+       line-height: 1.2;
+
+}
+
+
+
+.wishlist-heading p {
+
+       color: var(--muted);
+
+       font-size: 13px;
+
+       line-height: 1.7;
+
+}
+
+
+
+.wishlist-topbar-actions {
+
+       display: flex;
+
+       align-items: center;
+
+       justify-content: flex-end;
+
+       gap: 15px;
+
+       flex-wrap: wrap;
+
+}
+
+
+
+.wishlist-count {
+
+       min-height: 40px;
+
+       padding: 0 15px;
+
+
+
+       display: inline-flex;
+
+       align-items: center;
+
+       justify-content: center;
+
+
+
+       border-radius: 7px;
+
+       background: var(--cream);
+
+       color: var(--taupe);
+
+
+
+       font-size: 12px;
+
+       font-weight: 700;
+
+       white-space: nowrap;
+
+}
+
+
+
+.wishlist-topbar-actions form {
+
+       margin: 0;
+
+}
+
+
+
+.clear-wishlist-button {
+
+       min-height: 40px;
+
+       padding: 0 17px;
+
+
+
+       border: 1px solid #CFC3F2;
+
+       border-radius: 7px;
+
+       background: #ffffff;
+
+       color: #3921A7;
+
+
+
+       font-size: 12px;
+
+       font-weight: 700;
+
+
+
+       transition:
+
+           background-color 0.2s ease,
+
+           border-color 0.2s ease,
+
+           color 0.2s ease;
+
+}
+
+
+
+.clear-wishlist-button:hover {
+
+       border-color: var(--taupe);
+
+       background: var(--cream);
+
+       color: var(--ink);
+
+}
+
+
+
+
+
+/* =========================================================
+
+      7. WISHLIST PRODUCT SECTION
+
+      ========================================================= */
+
+
+
+.wishlist-section {
+
+       width: 100%;
+
+       margin-top: 30px;
+
+}
+
+
+
+.wishlist-grid {
+
+       width: 100%;
+
+
+
+       display: grid;
+
+       grid-template-columns: repeat(3, minmax(0, 1fr));
+
+       align-items: stretch;
+
+       gap: 24px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+      8. PRODUCT CARD
+
+      ========================================================= */
+
+
+
+.wishlist-card {
+
+       min-width: 0;
+
+       overflow: hidden;
+
+
+
+       display: flex;
+
+       flex-direction: column;
+
+
+
+       border: 1px solid #E3DDF0;
+
+       border-radius: 11px;
+
+       background: #ffffff;
+
+
+
+       box-shadow: 0 5px 18px rgba(84, 51, 235, 0.06);
+
+
+
+       transition:
+
+           border-color 0.2s ease,
+
+           box-shadow 0.2s ease;
+
+}
+
+
+
+.wishlist-card:hover {
+
+       border-color: #8D78DB;
+
+       box-shadow: 0 9px 22px rgba(84, 51, 235, 0.12);
+
+}
+
+
+
+
+
+/* =========================================================
+
+      9. PRODUCT IMAGE LINK
+
+      The JSP uses .wishlist-image-link
+
+      ========================================================= */
+
+
+
+.wishlist-image-link {
+
+       display: block;
+
+       width: 100%;
+
+       color: inherit;
+
+       cursor: pointer;
+
+}
+
+
+
+.wishlist-image-link:focus-visible {
+
+       outline-offset: -4px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+      10. PRODUCT IMAGE AREA
+
+      The JSP uses .wishlist-product-image
+
+      ========================================================= */
+
+
+
+.wishlist-product-image {
+
+       position: relative;
+
+       isolation: isolate;
+
+       overflow: hidden;
+
+
+
+       width: 100%;
+
+       height: 260px;
+
+
+
+       display: flex;
+
+       align-items: center;
+
+       justify-content: center;
+
+
+
+       background: linear-gradient(
+
+           135deg,
+
+           #C8B9F3 0%,
+
+           #E9E2FF 52%,
+
+           #B8A6ED 100%
+
+       );
+
+}
+
+
+
+/* Inner product placeholder */
+
+
+
+.wishlist-image-art {
+
+       width: 72%;
+
+       height: 76%;
+
+
+
+       display: flex;
+
+       align-items: center;
+
+       justify-content: center;
+
+
+
+       overflow: hidden;
+
+
+
+       border: 1px solid rgba(255, 255, 255, 0.35);
+
+       border-radius: 2px;
+
+       background: rgba(255, 255, 255, 0.25);
+
+}
+
+
+
+.wishlist-image-art span {
+
+       color: var(--taupe);
+
+       font-family: Georgia, "Times New Roman", serif;
+
+       font-size: clamp(23px, 2.2vw, 34px);
+
+       font-weight: 700;
+
+       letter-spacing: -1.3px;
+
+}
+
+
+
+/* Saved for later label */
+
+
+
+.wishlist-image-label {
+
+       position: absolute;
+
+       z-index: 2;
+
+       left: 17px;
+
+       bottom: 15px;
+
+
+
+       color: #6C55C7;
+
+       font-size: 10px;
+
+       font-weight: 800;
+
+       letter-spacing: 1.7px;
+
+       line-height: 1.4;
+
+
+
+       pointer-events: none;
+
+}
+
+
+
+/* Heart inside the image.
+
+      This is the class used in wishlist.jsp. */
+
+
+
+.wishlist-image-heart {
+
+       position: absolute;
+
+       z-index: 3;
+
+       top: 15px;
+
+       right: 15px;
+
+
+
+       width: 40px;
+
+       height: 40px;
+
+
+
+       display: flex;
+
+       align-items: center;
+
+       justify-content: center;
+
+
+
+       border: 1px solid #D8CCF5;
+
+       border-radius: 50%;
+
+       background: #ffffff;
+
+       color: #6C55C7;
+
+
+
+       font-size: 18px;
+
+       line-height: 1;
+
+
+
+       pointer-events: none;
+
+}
+
+
+
+/* Keep the image area clickable without excessive movement */
+
+
+
+.wishlist-card:hover .wishlist-image-art span {
+
+       color: #3921A7;
+
+}
+
+
+
+
+
+/* =========================================================
+
+      11. PRODUCT DETAILS
+
+      The JSP uses .wishlist-product-content
+
+      ========================================================= */
+
+
+
+.wishlist-product-content {
+
+       min-width: 0;
+
+       flex: 1;
+
+
+
+       display: flex;
+
+       flex-direction: column;
+
+
+
+       padding: 24px;
+
+       background: #ffffff;
+
+}
+
+
+
+.wishlist-product-name {
+
+       margin: 0 0 18px;
+
+
+
+       color: var(--ink);
+
+       font-family: Georgia, "Times New Roman", serif;
+
+       font-size: 25px;
+
+       font-weight: 400;
+
+       letter-spacing: -0.5px;
+
+       line-height: 1.3;
+
+
+
+       overflow-wrap: anywhere;
+
+}
+
+
+
+.wishlist-product-name a {
+
+       color: var(--ink);
+
+       cursor: pointer;
+
+       transition: color 0.2s ease;
+
+}
+
+
+
+.wishlist-product-name a:hover {
+
+       color: var(--taupe);
+
+}
+
+
+
+
+
+/* =========================================================
+
+      12. SIZE AND COLOUR ROWS
+
+      The JSP uses .wishlist-info-row
+
+      ========================================================= */
+
+
+
+.wishlist-info-row {
+
+       min-height: 42px;
+
+
+
+       display: flex;
+
+       align-items: center;
+
+       justify-content: space-between;
+
+       gap: 15px;
+
+
+
+       padding: 10px 0;
+
+       border-bottom: 1px solid var(--line);
+
+
+
+       font-size: 12px;
+
+       line-height: 1.5;
+
+}
+
+
+
+.wishlist-info-row span {
+
+       color: var(--muted);
+
+       font-weight: 400;
+
+}
+
+
+
+.wishlist-info-row strong {
+
+       color: var(--ink);
+
+       font-size: 12px;
+
+       font-weight: 700;
+
+       text-align: right;
+
+       overflow-wrap: anywhere;
+
+}
+
+
+
+
+
+/* =========================================================
+
+      13. PRODUCT PRICE
+
+      The JSP uses .wishlist-price and .currency-symbol
+
+      ========================================================= */
+
+
+
+.wishlist-price {
+
+       display: flex;
+
+       align-items: baseline;
+
+       gap: 2px;
+
+
+
+       margin: 22px 0;
+
+
+
+       color: var(--ink);
+
+       font-size: 23px;
+
+       font-weight: 800;
+
+       letter-spacing: -0.5px;
+
+       line-height: 1.3;
+
+}
+
+
+
+.currency-symbol {
+
+       display: inline-block;
+
+       color: var(--ink);
+
+       font-size: 21px;
+
+       font-weight: 800;
+
+}
+
+
+
+
+
+/* =========================================================
+
+      14. PRODUCT ACTIONS
+
+      The JSP contains a product link and a remove form
+
+      ========================================================= */
+
+
+
+.wishlist-actions {
+
+       display: grid;
+
+       grid-template-columns: minmax(0, 1fr) auto;
+
+       align-items: stretch;
+
+       gap: 10px;
+
+
+
+       margin-top: auto;
+
+}
+
+
+
+.wishlist-actions form {
+
+       display: flex;
+
+       margin: 0;
+
+}
+
+
+
+/* View Product button */
+
+
+
+.wishlist-view-button {
+
+       min-width: 0;
+
+       min-height: 48px;
+
+       width: 100%;
+
+       padding: 0 15px;
+
+
+
+       display: inline-flex;
+
+       align-items: center;
+
+       justify-content: center;
+
+       gap: 10px;
+
+
+
+       border: 1px solid var(--ink);
+
+       border-radius: 5px;
+
+       background: var(--ink);
+
+       color: #ffffff;
+
+
+
+       font-size: 12px;
+
+       font-weight: 700;
+
+       text-align: center;
+
+       white-space: nowrap;
+
+
+
+       cursor: pointer;
+
+
+
+       transition:
+
+           background-color 0.2s ease,
+
+           border-color 0.2s ease;
+
+}
+
+
+
+.wishlist-view-button span {
+
+       font-size: 16px;
+
+       line-height: 1;
+
+}
+
+
+
+.wishlist-view-button:hover {
+
+       border-color: var(--taupe);
+
+       background: var(--taupe);
+
+       color: #ffffff;
+
+}
+
+
+
+/* Remove button */
+
+
+
+.wishlist-remove-button {
+
+       min-height: 48px;
+
+       padding: 0 16px;
+
+
+
+       border: 1px solid #D8CCF5;
+
+       border-radius: 5px;
+
+       background: #ffffff;
+
+       color: #6C55C7;
+
+
+
+       font-size: 12px;
+
+       font-weight: 700;
+
+       white-space: nowrap;
+
+
+
+       transition:
+
+           background-color 0.2s ease,
+
+           border-color 0.2s ease,
+
+           color 0.2s ease;
+
+}
+
+
+
+.wishlist-remove-button:hover {
+
+       border-color: #8D78DB;
+
+       background: var(--cream);
+
+       color: var(--ink);
+
+}
+
+
+
+
+
+/* =========================================================
+
+      15. EMPTY WISHLIST
+
+      The JSP uses .empty-wishlist
+
+      ========================================================= */
+
+
+
+.empty-wishlist {
+
+       width: 100%;
+
+       padding: 64px 24px;
+
+
+
+       border: 1px solid var(--line);
+
+       border-radius: 11px;
+
+       background: #ffffff;
+
+
+
+       text-align: center;
+
+}
+
+
+
+.empty-wishlist-icon {
+
+       width: 76px;
+
+       height: 76px;
+
+       margin: 0 auto 24px;
+
+
+
+       display: flex;
+
+       align-items: center;
+
+       justify-content: center;
+
+
+
+       border: 1px solid #6C55C7;
+
+       border-radius: 50%;
+
+       background: var(--cream);
+
+       color: var(--taupe);
+
+
+
+       font-size: 38px;
+
+}
+
+
+
+.empty-wishlist .section-eyebrow {
+
+       margin-bottom: 12px;
+
+}
+
+
+
+.empty-wishlist h2 {
+
+       margin-bottom: 14px;
+
+
+
+       color: var(--ink);
+
+       font-family: Georgia, "Times New Roman", serif;
+
+       font-size: 35px;
+
+       font-weight: 400;
+
+       letter-spacing: -0.8px;
+
+}
+
+
+
+.empty-wishlist p {
+
+       max-width: 480px;
+
+       margin: 0 auto 25px;
+
+
+
+       color: var(--muted);
+
+       font-size: 14px;
+
+       line-height: 1.8;
+
+}
+
+
+
+.browse-wishlist-button {
+
+       min-height: 46px;
+
+       padding: 0 22px;
+
+
+
+       display: inline-flex;
+
+       align-items: center;
+
+       justify-content: center;
+
+       gap: 12px;
+
+
+
+       border: 1px solid var(--ink);
+
+       border-radius: 5px;
+
+       background: var(--ink);
+
+       color: #ffffff;
+
+
+
+       font-size: 12px;
+
+       font-weight: 700;
+
+
+
+       transition: background-color 0.2s ease;
+
+}
+
+
+
+.browse-wishlist-button span {
+
+       font-size: 16px;
+
+}
+
+
+
+.browse-wishlist-button:hover {
+
+       background: var(--taupe);
+
+       border-color: var(--taupe);
+
+}
+
+
+
+
+
+/* =========================================================
+
+      16. FOOTER
+
+      Matches the existing footer structure with the EasyBuy purple/lavender palette
+
+      ========================================================= */
+
+
+
+.site-footer {
+
+       width: 100%;
+
+       margin-top: 0;
+
+       padding: 65px 32px 0;
+
+
+
+       background: #FCFBF8;
+
+}
+
+
+
+.footer-main {
+
+       width: min(100%, var(--max-width));
+
+       margin: 0 auto;
+
+       padding-bottom: 55px;
+
+
+
+       display: grid;
+
+       grid-template-columns: 1.2fr 0.7fr 0.9fr 1fr;
+
+       gap: 40px;
+
+}
+
+
+
+.footer-brand,
+
+.footer-column,
+
+.footer-note {
+
+       min-width: 0;
+
+}
+
+
+
+.footer-logo {
+
+       display: inline-block;
+
+       margin-bottom: 18px;
+
+
+
+       color: var(--ink);
+
+       font-family: Georgia, "Times New Roman", serif;
+
+       font-size: 27px;
+
+       font-weight: 700;
+
+       letter-spacing: -1.4px;
+
+}
+
+
+
+.footer-logo span {
+
+       color: var(--accent);
+
+}
+
+
+
+.footer-brand p,
+
+.footer-note p {
+
+       color: var(--muted);
+
+       font-size: 11px;
+
+       line-height: 1.8;
+
+}
+
+
+
+.footer-column {
+
+       display: flex;
+
+       flex-direction: column;
+
+       align-items: flex-start;
+
+       gap: 12px;
+
+}
+
+
+
+.footer-column h3 {
+
+       margin: 5px 0 8px;
+
+
+
+       color: var(--ink);
+
+       font-size: 10px;
+
+       font-weight: 700;
+
+       letter-spacing: 1.5px;
+
+}
+
+
+
+.footer-column a,
+
+.footer-note a {
+
+       color: #625D6A;
+
+       font-size: 11px;
+
+
+
+       transition: color 0.2s ease;
+
+}
+
+
+
+.footer-column a:hover,
+
+.footer-note a:hover {
+
+       color: var(--taupe);
+
+}
+
+
+
+.footer-note > span {
+
+       display: inline-block;
+
+       margin-bottom: 14px;
+
+
+
+       color: var(--taupe);
+
+       font-size: 9px;
+
+       font-weight: 700;
+
+       letter-spacing: 1.5px;
+
+}
+
+
+
+.footer-bottom {
+
+       width: min(100%, var(--max-width));
+
+       margin: 0 auto;
+
+       padding: 22px 0;
+
+
+
+       display: flex;
+
+       align-items: center;
+
+       justify-content: space-between;
+
+       gap: 20px;
+
+
+
+       border-top: 1px solid var(--line);
+
+       color: var(--muted);
+
+       font-size: 10px;
+
+}
+
+
+
+.footer-bottom a {
+
+       color: var(--ink);
+
+       transition: color 0.2s ease;
+
+}
+
+
+
+.footer-bottom a:hover {
+
+       color: var(--taupe);
+
+}
+
+
+
+
+
+/* =========================================================
+
+      17. NO BENEFITS STRIP ON WISHLIST
+
+      ========================================================= */
+
+
+
+.benefits-strip,
+
+.benefit-strip,
+
+.benefit-item {
+
+       display: none !important;
+
+}
+
+
+
+
+
+/* =========================================================
+
+      18. TABLET RESPONSIVE LAYOUT
+
+      ========================================================= */
+
+
+
+@media (max-width: 1100px) {
+
+       .wishlist-page {
+
+           width: calc(100% -    64px);
+
+       }
+
+
+
+       .wishlist-grid {
+
+           grid-template-columns: repeat(2, minmax(0, 1fr));
+
+           gap: 22px;
+
+       }
+
+
+
+       .footer-main {
+
+           grid-template-columns: repeat(2, minmax(0, 1fr));
+
+           gap: 36px;
+
+       }
+
+
+
+       .wishlist-product-image {
+
+           height: 245px;
+
+       }
+
+}
+
+
+
+
+
+/* =========================================================
+
+      19. SMALL TABLETS
+
+      ========================================================= */
+
+
+
+@media (max-width: 760px) {
+
+       .navbar {
+
+           height: 76px;
+
+           padding: 0 24px;
+
+       }
+
+
+
+       .logo {
+
+           font-size: 29px;
+
+       }
+
+
+
+       .nav-actions {
+
+           gap: 16px;
+
+       }
+
+
+
+       .cart-nav-link,
+
+       .profile-nav-link {
+
+           gap: 7px;
+
+           font-size: 12px;
+
+       }
+
+
+
+       .profile-dp {
+
+           width: 38px;
+
+           height: 38px;
+
+           flex-basis: 38px;
+
+       }
+
+
+
+       .wishlist-page {
+
+           width: calc(100% -    40px);
+
+           margin-top: 30px;
+
+           margin-bottom: 55px;
+
+       }
+
+
+
+       .wishlist-header {
+
+           min-height: 260px;
+
+           padding: 35px 28px;
+
+       }
+
+
+
+       .wishlist-header h1 {
+
+           font-size: clamp(42px, 7vw, 56px);
+
+           letter-spacing: -1.8px;
+
+       }
+
+
+
+       .wishlist-header p {
+
+           max-width: 460px;
+
+           font-size: 14px;
+
+       }
+
+
+
+       .wishlist-heart {
+
+           width: 76px;
+
+           height: 76px;
+
+           flex-basis: 76px;
+
+           margin-right: 0;
+
+           font-size: 44px;
+
+       }
+
+
+
+       .wishlist-banner-mark {
+
+           right: 10px;
+
+           bottom: -75px;
+
+           font-size: 220px;
+
+       }
+
+
+
+       .wishlist-topbar {
+
+           align-items: flex-start;
+
+           margin-top: 40px;
+
+       }
+
+
+
+       .wishlist-heading h2 {
+
+           font-size: 30px;
+
+       }
+
+
+
+       .wishlist-product-content {
+
+           padding: 21px;
+
+       }
+
+
+
+       .wishlist-product-name {
+
+           font-size: 23px;
+
+       }
+
+
+
+       .wishlist-product-image {
+
+           height: 230px;
+
+       }
+
+
+
+       .site-footer {
+
+           padding: 48px 24px 0;
+
+       }
+
+
+
+       .footer-main {
+
+           gap: 32px 24px;
+
+       }
+
+}
+
+
+
+
+
+/* =========================================================
+
+      20. MOBILE LAYOUT
+
+      ========================================================= */
+
+
+
+@media (max-width: 560px) {
+
+       .navbar {
+
+           height: 72px;
+
+           padding: 0 16px;
+
+       }
+
+
+
+       .logo {
+
+           font-size: 27px;
+
+       }
+
+
+
+       .nav-actions {
+
+           gap: 12px;
+
+       }
+
+
+
+       .cart-nav-link,
+
+       .profile-nav-link {
+
+           gap: 6px;
+
+           font-size: 11px;
+
+       }
+
+
+
+       .cart-nav-link svg {
+
+           width: 17px;
+
+           height: 17px;
+
+       }
+
+
+
+       .profile-dp {
+
+           width: 34px;
+
+           height: 34px;
+
+           flex-basis: 34px;
+
+       }
+
+
+
+       .wishlist-page {
+
+           width: calc(100% -    30px);
+
+           margin-top: 24px;
+
+           margin-bottom: 42px;
+
+       }
+
+
+
+       .wishlist-header {
+
+           min-height: 240px;
+
+           padding: 29px 22px;
+
+           border-radius: 10px;
+
+       }
+
+
+
+       .wishlist-header-content {
+
+           max-width: 100%;
+
+       }
+
+
+
+       .wishlist-eyebrow {
+
+           margin-bottom: 13px;
+
+           font-size: 10px;
+
+           letter-spacing: 1.6px;
+
+       }
+
+
+
+       .wishlist-header h1 {
+
+           margin-bottom: 15px;
+
+           font-size: 40px;
+
+           letter-spacing: -1.6px;
+
+       }
+
+
+
+       .wishlist-header p {
+
+           max-width: 100%;
+
+           font-size: 13px;
+
+           line-height: 1.7;
+
+       }
+
+
+
+       .wishlist-heart {
+
+           display: none;
+
+       }
+
+
+
+       .wishlist-banner-mark {
+
+           right: 0;
+
+           bottom: -52px;
+
+           font-size: 165px;
+
+           letter-spacing: -13px;
+
+       }
+
+
+
+       .wishlist-topbar {
+
+           flex-direction: column;
+
+           align-items: stretch;
+
+           gap: 17px;
+
+           margin-top: 32px;
+
+           padding-bottom: 20px;
+
+       }
+
+
+
+       .wishlist-heading h2 {
+
+           font-size: 29px;
+
+       }
+
+
+
+       .wishlist-topbar-actions {
+
+           justify-content: flex-start;
+
+       }
+
+
+
+       .wishlist-section {
+
+           margin-top: 22px;
+
+       }
+
+
+
+       .wishlist-grid {
+
+           grid-template-columns: 1fr;
+
+           gap: 20px;
+
+       }
+
+
+
+       .wishlist-product-image {
+
+           height: 260px;
+
+       }
+
+
+
+       .wishlist-product-content {
+
+           padding: 22px;
+
+       }
+
+
+
+       .wishlist-product-name {
+
+           font-size: 25px;
+
+       }
+
+
+
+       .wishlist-info-row {
+
+           min-height: 40px;
+
+       }
+
+
+
+       .wishlist-price {
+
+           margin: 19px 0;
+
+           font-size: 22px;
+
+       }
+
+
+
+       .wishlist-actions {
+
+           grid-template-columns: minmax(0, 1fr) auto;
+
+           gap: 8px;
+
+       }
+
+
+
+       .wishlist-view-button {
+
+           padding: 0 11px;
+
+           font-size: 11px;
+
+       }
+
+
+
+       .wishlist-remove-button {
+
+           padding: 0 12px;
+
+           font-size: 11px;
+
+       }
+
+
+
+       .empty-wishlist {
+
+           padding: 45px 20px;
+
+       }
+
+
+
+       .empty-wishlist h2 {
+
+           font-size: 29px;
+
+       }
+
+
+
+       .site-footer {
+
+           padding: 42px 20px 0;
+
+       }
+
+
+
+       .footer-main {
+
+           grid-template-columns: repeat(2, minmax(0, 1fr));
+
+           gap: 30px 18px;
+
+           padding-bottom: 35px;
+
+       }
+
+
+
+       .footer-bottom {
+
+           flex-direction: column;
+
+           align-items: flex-start;
+
+           gap: 12px;
+
+           padding: 20px 0;
+
+       }
+
+}
+
+
+
+
+
+/* =========================================================
+
+      21. VERY SMALL MOBILE SCREENS
+
+      ========================================================= */
+
+
+
+@media (max-width: 360px) {
+
+       .navbar {
+
+           padding: 0 11px;
+
+       }
+
+
+
+       .logo {
+
+           font-size: 24px;
+
+           letter-spacing: -1.4px;
+
+       }
+
+
+
+       .nav-actions {
+
+           gap: 8px;
+
+       }
+
+
+
+       .cart-nav-link,
+
+       .profile-nav-link {
+
+           gap: 4px;
+
+           font-size: 10px;
+
+       }
+
+
+
+       .profile-dp {
+
+           width: 30px;
+
+           height: 30px;
+
+           flex-basis: 30px;
+
+       }
+       .wishlist-header h1 {
+           font-size: 35px;
+       }
+       .wishlist-actions {
+           grid-template-columns: 1fr;
+       }
+       .wishlist-view-button,
+       .wishlist-remove-button {
+           width: 100%;
+       }
+       .footer-main {
+           grid-template-columns: 1fr;
+           gap: 27px;
+       }
+}
+/* =========================================================
+      22. REDUCED MOTION ACCESSIBILITY
+      ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+       html {
+           scroll-behavior: auto;
+       }
+       *,
+       *::before,
+       *::after {
+           animation-duration: 0.01ms !important;
+           animation-iteration-count: 1 !important;
+           scroll-behavior: auto !important;
+           transition-duration: 0.01ms !important;
+       }
+}
+
+
+/* =========================================================
+   23. WISHLIST HERO IMAGE
+   Uses the Wishlist banner image instead of the blue background.
+   Keeps the existing hero layout and dimensions.
+   ========================================================= */
+
+.wishlist-header {
+    position: relative;
+    overflow: hidden;
+
+    background-color: #E9E2FF;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(36, 33, 39, 0.58) 0%,
+            rgba(36, 33, 39, 0.25) 55%,
+            rgba(36, 33, 39, 0.05) 100%
+        ),
+        url("../images/categories/wishlist-page.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Keep hero text readable over the image */
+.wishlist-header-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Keep decorative hero elements above the image */
+.wishlist-heart,
+.wishlist-banner-mark {
+    position: absolute;
+    z-index: 2;
+}
+
+
+
+/* =========================================================
+   25. CLEAR WISHLIST BUTTON HOVER
+   Keeps the original button size and position.
+   ========================================================= */
+
+.clear-wishlist-button {
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.clear-wishlist-button:hover {
+    background-color: #5433EB;
+    color: #FFFFFF;
+    border-color: #5433EB;
+    box-shadow: 0 5px 14px rgba(84, 51, 235, 0.18);
+}
+
+.clear-wishlist-button:active {
+    transform: scale(0.98);
+}
+
+.clear-wishlist-button:focus-visible {
+    outline: 2px solid #5433EB;
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   26. WISHLIST FOOTER THEME
+   Purple and lavender colors.
+   Preserves the existing footer structure and spacing.
+   ========================================================= */
+
+.site-footer {
+    background: #F0EAFF;
+    color: #242127;
+    border-top: 1px solid #DED3FF;
+}
+
+/* Footer brand */
+.footer-logo {
+    color: #5433EB;
+}
+
+.footer-brand,
+.footer-note {
+    color: #625D70;
+}
+
+/* Footer column headings */
+.footer-column h3,
+.footer-column h4 {
+    color: #3921A7;
+}
+
+/* Footer links */
+.footer-column a {
+    color: #625D70;
+    transition: color 0.25s ease;
+}
+
+.footer-column a:hover {
+    color: #5433EB;
+}
+
+/* Footer bottom area */
+.footer-bottom {
+    background: #E9E2FF;
+    color: #625D70;
+    border-top: 1px solid #DED3FF;
+}
+
+/* Footer keyboard accessibility */
+.site-footer a:focus-visible {
+    outline: 2px solid #5433EB;
+    outline-offset: 3px;
+}
+
+
+/* Remove the decorative heart from the Wishlist hero banner */
+.wishlist-header .wishlist-heart {
+    display: none !important;
+}
+

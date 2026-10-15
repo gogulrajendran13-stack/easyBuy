@@ -1,0 +1,1187 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        "Plus Jakarta Sans",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: #211d2a;
+
+    background:
+        radial-gradient(
+            circle at 78% 20%,
+            rgba(105, 71, 239, 0.10),
+            transparent 30%
+        ),
+        #f4f0fb;
+
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: optimizeLegibility;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.auth-page {
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* =========================================================
+   LEFT PANEL
+   Slightly darker lavender.
+========================================================= */
+
+.auth-brand-panel {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 42px 6%;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 12% 8%,
+            rgba(108, 73, 235, 0.25),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 82% 92%,
+            rgba(93, 64, 211, 0.20),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            145deg,
+            #d7c9f2 0%,
+            #cfc0eb 48%,
+            #e2d7f7 100%
+        );
+}
+
+
+/* =========================================================
+   DECORATIONS
+========================================================= */
+
+.brand-panel-decoration {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.decoration-one {
+
+    width: 320px;
+    height: 320px;
+
+    top: -150px;
+    left: -100px;
+
+    background:
+        rgba(104, 70, 228, 0.13);
+}
+
+
+.decoration-two {
+
+    width: 250px;
+    height: 250px;
+
+    right: -120px;
+    bottom: -100px;
+
+    background:
+        rgba(91, 62, 210, 0.13);
+}
+
+
+.decoration-three {
+
+    width: 130px;
+    height: 130px;
+
+    right: 12%;
+    top: 17%;
+
+    background:
+        rgba(255, 255, 255, 0.28);
+}
+
+
+/* =========================================================
+   LEFT BRAND CARD
+========================================================= */
+
+.brand-panel-card {
+
+    width: min(100%, 590px);
+
+    min-height: 650px;
+
+    position: relative;
+
+    z-index: 3;
+
+    padding: 48px 52px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.72);
+
+    border-radius: 32px;
+
+    background:
+        rgba(247, 243, 255, 0.72);
+
+    box-shadow:
+        0 25px 60px rgba(65, 45, 125, 0.14);
+
+    backdrop-filter: blur(16px);
+}
+
+
+/* =========================================================
+   EASYBUY WORDMARK
+   TEXT ONLY
+   No logo image.
+========================================================= */
+
+.auth-logo {
+
+    width: fit-content;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 30px;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    transition:
+        opacity 0.2s ease;
+}
+
+
+.easybuy-wordmark {
+
+    display: inline-block;
+
+    color: #536dcc;
+
+    font-size: 32px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.auth-logo:hover {
+    opacity: 0.92;
+}
+
+
+.auth-logo:hover .easybuy-wordmark {
+
+    color: #6251d9;
+}
+
+
+/* =========================================================
+   LEFT EYEBROW
+========================================================= */
+
+.auth-eyebrow {
+
+    width: fit-content;
+
+    display: inline-flex;
+
+    margin-bottom: 20px;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    color: #5634c9;
+
+    background: #d5c9f4;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+}
+
+
+/* =========================================================
+   LEFT HEADING
+========================================================= */
+
+.brand-panel-card h1 {
+
+    margin-bottom: 20px;
+
+    color: #211c2c;
+
+    font-size: clamp(42px, 5vw, 62px);
+
+    line-height: 0.98;
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+}
+
+
+.brand-panel-card h1 span {
+
+    color: #5b35ed;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.auth-description {
+
+    max-width: 520px;
+
+    margin-bottom: 30px;
+
+    color: #655d73;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.auth-features {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.auth-feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: fit-content;
+
+    color: #4d4659;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.feature-check {
+
+    width: 24px;
+    height: 24px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex: 0 0 24px;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background: #5b35ed;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   BOTTOM CAPTION
+========================================================= */
+
+.brand-panel-caption {
+
+    position: absolute;
+
+    left: 8%;
+
+    bottom: 30px;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #746b84;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.brand-panel-caption span {
+
+    width: 38px;
+
+    height: 1px;
+
+    background: #9389a4;
+}
+
+
+/* =========================================================
+   RIGHT PANEL
+========================================================= */
+
+.auth-form-panel {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 42px 6%;
+
+    background:
+
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(103, 70, 235, 0.08),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            145deg,
+            #f8f5fd 0%,
+            #f4f0fa 100%
+        );
+}
+
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.login-card {
+
+    width: min(100%, 590px);
+
+    min-height: 650px;
+
+    padding: 48px 52px 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border:
+        1px solid #e5dff0;
+
+    border-radius: 32px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 25px 65px rgba(53, 40, 83, 0.12);
+}
+
+
+/* =========================================================
+   LOGIN HEADING
+========================================================= */
+
+.login-heading {
+
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+
+.login-heading h2 {
+
+    margin-bottom: 10px;
+
+    color: #211d29;
+
+    font-size: 38px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -1.8px;
+}
+
+
+.login-heading p {
+
+    color: #80778c;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MESSAGES
+========================================================= */
+
+.message-box {
+
+    min-height: 48px;
+
+    margin-bottom: 18px;
+
+    padding: 10px 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border-radius: 12px;
+
+    font-size: 11px;
+}
+
+
+.error-message {
+
+    color: #9d3b45;
+
+    background: #fff0f1;
+
+    border:
+        1px solid #ffd7da;
+}
+
+
+.success-message {
+
+    color: #37734d;
+
+    background: #effbf3;
+
+    border:
+        1px solid #d5f0dc;
+}
+
+
+.message-icon {
+
+    width: 24px;
+    height: 24px;
+
+    flex: 0 0 24px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.login-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.form-group label {
+
+    color: #37313f;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-wrap {
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    border:
+        1px solid #ddd7e5;
+
+    border-radius: 15px;
+
+    background: #faf8fc;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.input-wrap:hover {
+
+    border-color: #c8bee0;
+
+    background: #ffffff;
+}
+
+
+.input-wrap:focus-within {
+
+    border-color: #7252e8;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(91, 53, 237, 0.08);
+}
+
+
+.input-symbol {
+
+    width: 45px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #8f879b;
+
+    font-size: 15px;
+}
+
+
+.input-wrap input {
+
+    min-width: 0;
+
+    flex: 1;
+
+    height: 100%;
+
+    padding: 0 12px 0 0;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color: #29242f;
+
+    font-size: 12px;
+}
+
+
+.input-wrap input::placeholder {
+
+    color: #a29aaa;
+}
+
+
+/* =========================================================
+   PASSWORD BUTTON
+========================================================= */
+
+.password-toggle {
+
+    width: 48px;
+
+    height: 100%;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    border-radius: 12px;
+}
+
+
+.password-toggle:hover {
+
+    background: #f0ebff;
+}
+
+
+.eye-icon {
+
+    width: 17px;
+
+    height: 11px;
+
+    position: relative;
+
+    display: block;
+
+    border:
+        1.6px solid #8f8798;
+
+    border-radius: 70%;
+}
+
+
+.eye-icon::after {
+
+    content: "";
+
+    width: 4px;
+
+    height: 4px;
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #8f8798;
+}
+
+
+.password-toggle.visible .eye-icon {
+
+    border-color: #5b35ed;
+}
+
+
+.password-toggle.visible .eye-icon::after {
+
+    background: #5b35ed;
+}
+
+
+/* =========================================================
+   REMEMBER ME
+========================================================= */
+
+.remember-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    width: fit-content;
+
+    color: #766e80;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.remember-row input {
+
+    width: 17px;
+
+    height: 17px;
+
+    accent-color: #5b35ed;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.primary-auth-button {
+
+    width: 100%;
+
+    height: 57px;
+
+    margin-top: 2px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: 0;
+
+    border-radius: 15px;
+
+    color: #ffffff;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #5630ed,
+            #7048ef
+        );
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 22px rgba(91, 53, 237, 0.20);
+
+    cursor: pointer;
+
+    transition:
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.primary-auth-button:hover {
+
+    filter: brightness(1.04);
+
+    box-shadow:
+        0 13px 25px rgba(91, 53, 237, 0.25);
+}
+
+
+.primary-auth-button:active {
+
+    box-shadow:
+        0 7px 16px rgba(91, 53, 237, 0.18);
+}
+
+
+.button-arrow {
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.auth-divider {
+
+    margin: 25px 0 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.auth-divider span {
+
+    height: 1px;
+
+    flex: 1;
+
+    background: #e8e3ec;
+}
+
+
+.auth-divider strong {
+
+    color: #9b94a3;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   ACCOUNT LINK
+========================================================= */
+
+.account-switch {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    color: #81798b;
+
+    font-size: 11px;
+}
+
+
+.account-switch a {
+
+    color: #5630e8;
+
+    font-weight: 800;
+}
+
+
+.account-switch a:hover {
+
+    color: #4320d9;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   CONTINUE SHOPPING
+========================================================= */
+
+.continue-shopping {
+
+    width: fit-content;
+
+    margin: 22px auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    color: #81798b;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.continue-shopping:hover {
+
+    color: #5b35ed;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .auth-page {
+
+        grid-template-columns:
+            48% 52%;
+    }
+
+
+    .auth-brand-panel,
+    .auth-form-panel {
+
+        padding-left: 4%;
+
+        padding-right: 4%;
+    }
+
+
+    .brand-panel-card,
+    .login-card {
+
+        width: min(100%, 540px);
+
+        min-height: 620px;
+    }
+
+
+    .brand-panel-card {
+
+        padding: 42px 38px;
+    }
+
+
+    .login-card {
+
+        padding: 42px 38px 36px;
+    }
+
+
+    .easybuy-wordmark {
+
+        font-size: 28px;
+    }
+
+
+    .brand-panel-card h1 {
+
+        font-size: 48px;
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .auth-page {
+
+        display: flex;
+
+        flex-direction: column;
+    }
+
+
+    .auth-brand-panel,
+    .auth-form-panel {
+
+        min-height: auto;
+
+        padding: 40px 22px;
+    }
+
+
+    .brand-panel-card,
+    .login-card {
+
+        width: 100%;
+
+        max-width: 650px;
+
+        min-height: auto;
+    }
+
+
+    .brand-panel-card {
+
+        padding: 40px 35px;
+    }
+
+
+    .login-card {
+
+        padding: 40px 35px 35px;
+    }
+
+
+    .brand-panel-caption {
+
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .auth-brand-panel,
+    .auth-form-panel {
+
+        padding: 24px 15px;
+    }
+
+
+    .brand-panel-card,
+    .login-card {
+
+        border-radius: 25px;
+    }
+
+
+    .brand-panel-card {
+
+        padding: 32px 25px;
+    }
+
+
+    .login-card {
+
+        padding: 32px 22px 30px;
+    }
+
+
+    .easybuy-wordmark {
+
+        font-size: 25px;
+    }
+
+
+    .brand-panel-card h1 {
+
+        font-size: 40px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .login-heading h2 {
+
+        font-size: 33px;
+    }
+
+
+    .input-wrap {
+
+        height: 53px;
+    }
+
+
+    .primary-auth-button {
+
+        height: 54px;
+    }
+
+}

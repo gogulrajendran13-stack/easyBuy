@@ -1,0 +1,3039 @@
+/* =========================================================
+
+   easyBuy PRODUCT DETAILS PAGE
+
+   SECTION 1: GLOBAL COLOURS AND VARIABLES
+
+   Keep the existing easyBuy colour palette unchanged.
+
+   ========================================================= */
+
+:root {
+
+    --ink: #242127;
+
+    --paper: #ffffff;
+
+    --cream: #f1ecff;
+
+    --sand: #e9e2ff;
+
+    --taupe: #6c55c7;
+
+    --muted: #77717b;
+
+    --line: #ded4ff;
+
+    --accent: #5433eb;
+
+    --purple-deep: #3921a7;
+
+    --lavender: #e9e2ff;
+
+    --lavender-accent: #6c55c7;
+
+    --max-width: 1500px;
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 2: GLOBAL RESET
+
+   ========================================================= */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+
+body {
+
+    margin: 0;
+
+    background: var(--paper);
+
+    color: var(--ink);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+
+button,
+
+input {
+
+    font: inherit;
+
+}
+
+
+
+button,
+
+a {
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+
+button {
+
+    cursor: pointer;
+
+}
+
+
+
+img {
+
+    max-width: 100%;
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 3: HEADER AND NAVIGATION
+
+   ========================================================= */
+
+.site-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid #eee8ff;
+
+}
+
+
+
+.navbar {
+
+    width: min(calc(100% - 64px), var(--max-width));
+
+    min-height: 82px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 24px;
+
+}
+
+
+
+/* SECTION 3A: easyBuy WORDMARK */
+
+.logo,
+
+.footer-logo {
+
+    color: var(--ink);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+
+}
+
+
+
+/* Buy uses the existing WARM IVORY, not blue. */
+
+.logo span,
+
+.footer-logo span {
+
+    color: #5433eb; /* Purple brand accent */
+
+}
+
+
+
+/* SECTION 3B: HEADER ACTION LINKS */
+
+.nav-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 28px;
+
+}
+
+
+
+.nav-text,
+
+.profile-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: var(--ink);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+
+}
+
+
+
+.nav-text:hover,
+
+.profile-link:hover {
+
+    color: var(--taupe);
+
+}
+
+
+
+.nav-icon {
+
+    font-size: 18px;
+
+}
+
+
+
+.profile-link {
+
+    gap: 10px;
+
+}
+
+
+
+/* SECTION 3C: PROFILE INITIAL CIRCLE */
+
+.profile-dp {
+
+    width: 34px;
+
+    height: 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--cream);
+
+    color: var(--ink);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 4: MAIN PAGE CONTAINER
+
+   ========================================================= */
+
+.page-container {
+
+    width: min(calc(100% - 64px), var(--max-width));
+
+    margin: 0 auto;
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 5: BREADCRUMB NAVIGATION
+
+   ========================================================= */
+
+.breadcrumb {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 26px 0 30px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+
+.breadcrumb a:hover {
+
+    color: var(--taupe);
+
+}
+
+
+
+.breadcrumb-current {
+
+    color: var(--ink);
+
+}
+
+/* Product layout: align the image and information columns */
+.product-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: stretch;
+    gap: clamp(36px, 5vw, 80px);
+}
+
+.gallery-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+}
+
+
+/* =========================================================
+   SECTION 7: MAIN PRODUCT IMAGE
+   Keep the image from forcing the product layout to become
+   taller than necessary on desktop.
+   ========================================================= */
+
+.main-product-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    align-self: stretch;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 30px;
+    background: linear-gradient(145deg, #f5f1ff, #e2d8ff);
+    color: var(--taupe);
+    text-align: center;
+}
+
+.placeholder-symbol {
+    font-size: 44px;
+    line-height: 1;
+}
+
+.image-placeholder p {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.placeholder-note {
+    font-size: 11px;
+    color: #7566a8;
+}
+
+.main-product-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Smaller screens */
+@media (max-width: 760px) {
+    .main-product-image {
+        width: 100%;
+        height: 420px;
+        min-height: 0;
+    }
+}
+
+/* =========================================================
+
+   SECTION 8: PRODUCT INFORMATION
+
+   ========================================================= */
+
+.product-info {
+
+    min-width: 0;
+
+    padding: 8px 0 0;
+
+}
+
+
+
+.product-overline {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+    color: var(--taupe);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+
+.overline-line {
+
+    width: 30px;
+
+    height: 1px;
+
+    background: var(--taupe);
+
+}
+
+
+
+.product-category {
+
+    margin: 0 0 12px;
+
+    color: var(--muted);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    font-style: italic;
+
+}
+
+
+
+.product-title {
+
+    margin: 0 0 20px;
+
+    color: var(--ink);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(34px, 3.4vw, 50px);
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    letter-spacing: -1.3px;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+
+.product-price-row {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.price-label {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+}
+
+
+
+.product-price {
+
+    color: var(--ink);
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+}
+
+
+
+.product-intro {
+
+    max-width: 440px;
+
+    margin: 0 0 26px;
+
+    color: #68675f;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+}
+
+
+
+.info-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin: 25px 0;
+
+    background: var(--line);
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 9: SIZE AND COLOUR OPTION BLOCKS
+
+   ========================================================= */
+
+.option-block {
+
+    margin-bottom: 24px;
+
+}
+
+
+
+.option-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 13px;
+
+    color: var(--ink);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+
+.option-value {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    letter-spacing: 0;
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 10: CIRCULAR SIZE SELECTOR
+
+   S, M, L and R use circular buttons.
+
+   ========================================================= */
+
+.size-display {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+}
+
+
+
+.size-chip {
+
+    width: 43px;
+
+    height: 43px;
+
+    padding: 0;
+
+    border: 1px solid var(--line);
+
+    border-radius: 50%;
+
+    background: var(--paper);
+
+    color: var(--ink);
+
+    font-size: 12px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: background 0.2s ease, color 0.2s ease,
+
+                border-color 0.2s ease;
+
+}
+
+
+
+.size-chip:hover,
+
+.size-chip.selected {
+
+    border-color: var(--ink);
+
+    background: var(--ink);
+
+    color: var(--paper);
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 11: COLOUR SWATCHES
+
+   ========================================================= */
+
+.color-options {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 12px 0 16px;
+
+}
+
+
+
+.color-chip {
+
+    position: relative;
+
+    width: 30px;
+
+    height: 30px;
+
+    padding: 0;
+
+    flex-shrink: 0;
+
+    border: 1px solid #d5cec2;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: outline 0.2s ease, transform 0.2s ease;
+
+}
+
+
+
+/* SECTION 11A: WHITE COLOUR SWATCH */
+
+.white-chip {
+
+    background: #ffffff;
+
+}
+
+
+
+/* SECTION 11B: BLACK COLOUR SWATCH */
+
+.black-chip {
+
+    background: #171717;
+
+}
+
+
+
+/* SECTION 11C: BEIGE COLOUR SWATCH */
+
+.beige-chip {
+
+    background: #d8c3a5;
+
+}
+
+
+
+/* SECTION 11D: SELECTED COLOUR OUTLINE */
+
+.color-chip.selected {
+
+    outline: 2px solid var(--taupe);
+
+    outline-offset: 3px;
+
+    transform: scale(1.04);
+
+}
+
+
+
+.color-chip:focus-visible {
+
+    outline: 2px solid var(--accent);
+
+    outline-offset: 4px;
+
+}
+
+
+
+/* The duplicate colour preview underneath the swatches is removed. */
+
+
+
+/* =========================================================
+
+   SECTION 12: WISHLIST STATUS MESSAGES
+
+   ========================================================= */
+
+.product-message {
+
+    margin: 16px 0;
+
+    padding: 12px 15px;
+
+    font-size: 12px;
+
+}
+
+
+
+.product-message.success {
+
+    border: 1px solid #b9d8c2;
+
+    background: #eff8f1;
+
+    color: #28633b;
+
+}
+
+
+
+.product-message.error {
+
+    border: 1px solid #e5bcbc;
+
+    background: #fff1f1;
+
+    color: #9a3030;
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 13: ADD TO CART AND WISHLIST LAYOUT
+
+   ========================================================= */
+
+.product-actions {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    align-items: stretch;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin-top: 30px;
+
+}
+
+
+
+.cart-form,
+
+.wishlist-form {
+
+    display: flex;
+
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 64px;
+
+    margin: 0;
+
+}
+
+
+
+/* SECTION 13A: SHARED BUTTON DIMENSIONS */
+
+.add-cart-button,
+
+.wishlist-button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 64px;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    border-radius: 6px;
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 14: ADD TO CART BUTTON
+
+   Slightly rounded corners and centred label.
+
+   ========================================================= */
+
+.add-cart-button {
+
+    position: relative;
+
+    padding: 0 38px;
+
+    border: 1px solid var(--ink);
+
+    background: var(--ink);
+
+    color: #ffffff;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: background 0.2s ease, border-color 0.2s ease;
+
+}
+
+
+
+.cart-button-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+}
+
+
+
+.cart-button-icon {
+
+    font-size: 18px;
+
+}
+
+
+
+.button-arrow {
+
+    position: absolute;
+
+    right: 14px;
+
+    font-size: 18px;
+
+}
+
+
+
+.add-cart-button:hover {
+
+    border-color: var(--taupe);
+
+    background: var(--taupe);
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 15: WISHLIST BUTTON
+
+   Heart and text stay together inside one button.
+
+   ========================================================= */
+
+.wishlist-button {
+
+    flex-direction: row;
+
+    gap: 10px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--line);
+
+    background: #ffffff;
+
+    color: var(--ink);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: background 0.2s ease, border-color 0.2s ease;
+
+}
+
+
+
+.wishlist-icon {
+
+    font-size: 23px;
+
+    line-height: 1;
+
+}
+
+
+
+.wishlist-button:hover {
+
+    border-color: #a18a75;
+
+    background: var(--cream);
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 16: KEYBOARD ACCESSIBILITY
+
+   ========================================================= */
+
+.add-cart-button:focus-visible,
+
+.wishlist-button:focus-visible,
+
+.size-chip:focus-visible {
+
+    outline: 2px solid var(--accent);
+
+    outline-offset: 3px;
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 17: RECOMMENDED PRODUCTS
+
+   Keep the remaining existing recommendation, banner,
+
+   newsletter, footer, and responsive CSS sections below.
+
+   ========================================================= */
+
+
+
+/* =========================================================
+
+   SECTION 17: RECOMMENDED PRODUCTS SECTION
+
+   ========================================================= */
+
+.recommended-section {
+
+    margin: 0 0 65px;
+
+}
+
+
+
+/* SECTION 17A: RECOMMENDED SECTION HEADING */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 28px;
+
+}
+
+
+
+.eyebrow {
+
+    margin: 0 0 12px;
+
+    color: var(--taupe);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SECTION 17B: RECOMMENDED HEADING COLOURS
+
+   ========================================================= */
+
+.section-heading h2 {
+
+    margin: 0;
+
+    color: var(--ink); /* Recommended: deep charcoal */
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(28px, 3vw, 39px);
+
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.7px;
+
+}
+
+
+
+/* "for you." uses muted warm brown */
+
+.section-heading h2 em {
+
+    color: var(--taupe);
+
+    font-weight: 400;
+
+}
+
+
+
+
+
+/* SECTION 17C: VIEW ALL PRODUCTS LINK */
+
+.view-all-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid var(--line);
+
+    color: var(--ink);
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+
+}
+
+
+
+.view-all-link span {
+
+    color: var(--taupe);
+
+    font-size: 16px;
+
+}
+
+
+
+.view-all-link:hover {
+
+    color: var(--taupe);
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 18: RECOMMENDED PRODUCT GRID
+
+   Four cards in one row on larger screens.
+
+   ========================================================= */
+
+.recommended-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+}
+
+
+
+/* SECTION 18A: INDIVIDUAL RECOMMENDED CARD */
+
+.recommended-card {
+
+    display: block;
+
+    min-width: 0;
+
+    color: var(--ink);
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SECTION 18B: RECOMMENDED PRODUCT IMAGES
+
+   ========================================================= */
+
+.recommended-image {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    background: var(--cream);
+
+    transition: transform 0.25s ease;
+
+}
+
+
+
+/* Make each image fill its card without distortion */
+
+.recommended-image img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+
+/* Subtle hover effect */
+
+.recommended-card:hover .recommended-image {
+
+    transform: translateY(-3px);
+
+}
+
+
+
+
+
+/* SECTION 18C: CARD NUMBER */
+
+.recommended-image > span {
+
+    position: absolute;
+
+    top: 14px;
+
+    left: 15px;
+
+    color: var(--taupe);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+}
+
+
+
+/* SECTION 18D: DIFFERENT PLACEHOLDER COLOURS */
+
+.recommendation-one {
+
+    background: linear-gradient(145deg, #f5f1ff, #e4dbff);
+
+}
+
+
+
+.recommendation-two {
+
+    background: linear-gradient(145deg, #eee8ff, #d9ccff);
+
+}
+
+
+
+.recommendation-three {
+
+    background: linear-gradient(145deg, #f7f4ff, #e2d9ff);
+
+}
+
+
+
+.recommendation-four {
+
+    background: linear-gradient(145deg, #ece5ff, #d2c4ff);
+
+}
+
+
+
+/* SECTION 18E: PRODUCT CARD TEXT AND ARROW */
+
+.recommended-details {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding-top: 16px;
+
+}
+
+
+
+.recommended-details h3 {
+
+    margin: 0 0 6px;
+
+    color: var(--ink);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1.4;
+
+}
+
+
+
+.recommended-details p {
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+
+.card-arrow {
+
+    flex-shrink: 0;
+
+    color: var(--taupe);
+
+    font-size: 18px;
+
+    transition: transform 0.2s ease;
+
+}
+
+
+
+.recommended-card:hover .card-arrow {
+
+    transform: translate(3px, -3px);
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SECTION 19: IMAGE-BASED PROMOTIONAL BANNER
+
+   Keeps the existing EasyBuy warm neutral colours.
+
+   ========================================================= */
+
+
+
+.promo-banner {
+
+    position: relative;
+
+    isolation: isolate;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1.2fr) minmax(200px, 0.8fr);
+
+    align-items: center;
+
+    gap: 28px;
+
+
+
+    /* Reduced banner height */
+
+    min-height: 340px;
+
+    margin-bottom: 42px;
+
+    padding: clamp(28px, 4vw, 54px);
+
+
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #6c55c7, #3921a7);
+
+    color: #ffffff;
+
+}
+
+
+
+/* Full banner image */
+
+.promo-background-image {
+
+    position: absolute;
+
+    z-index: -2;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+
+
+
+/* SECTION 19A: LIGHTER OVERLAY FOR A CLEARER IMAGE */
+
+.promo-image-overlay {
+
+    position: absolute;
+
+    z-index: -1;
+
+    inset: 0;
+
+
+
+    /* Less darkness allows the product image to stand out */
+
+    background: linear-gradient(
+
+        90deg,
+
+        rgba(57, 33, 167, 0.48) 0%,
+
+        rgba(84, 51, 235, 0.30) 48%,
+
+        rgba(57, 33, 167, 0.20) 100%
+
+    );
+
+}
+
+
+
+
+
+/* Left-side banner content */
+
+.promo-content {
+
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 520px;
+
+}
+
+
+
+.promo-eyebrow {
+
+    margin: 0 0 14px;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+}
+
+
+
+.promo-content h2 {
+
+    margin: 0 0 16px;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(32px, 3.5vw, 46px);
+
+    font-weight: 400;
+
+    line-height: 1.12;
+
+    letter-spacing: -0.8px;
+
+}
+
+
+
+.promo-content h2 em {
+
+    color: #e9e2ff;
+
+    font-weight: 400;
+
+}
+
+
+
+.promo-description {
+
+    max-width: 390px;
+
+    margin: 0 0 22px;
+
+    color: rgba(255, 255, 255, 0.94);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+
+.promo-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 22px;
+
+    min-height: 44px;
+
+    padding: 0 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 4px;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    transition: background 0.2s ease, color 0.2s ease;
+
+}
+
+
+
+.promo-button:hover {
+
+    background: #ffffff;
+
+    color: var(--ink);
+
+}
+
+
+
+/* Offer is integrated into the banner, not placed in a circle */
+
+.promo-offer {
+
+    position: relative;
+
+    z-index: 1;
+
+    justify-self: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    max-width: 250px;
+
+    padding: 20px 12px;
+
+    border: 0;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+
+}
+
+
+
+/* Fine decorative lines give the offer an engraved feel */
+
+.promo-offer::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 8px;
+
+    bottom: 8px;
+
+    left: 0;
+
+    right: 0;
+
+    border-top: 1px solid rgba(245, 239, 229, 0.72);
+
+    border-bottom: 1px solid rgba(245, 239, 229, 0.72);
+
+    pointer-events: none;
+
+}
+
+
+
+.offer-small,
+
+.offer-bottom {
+
+    position: relative;
+
+    z-index: 1;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+
+.promo-offer strong {
+
+    position: relative;
+
+    z-index: 1;
+
+    display: block;
+
+    margin: 8px 0 5px;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(68px, 6.5vw, 88px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    white-space: nowrap;
+
+}
+
+
+
+.promo-offer strong span {
+
+    font-size: 0.42em;
+
+    vertical-align: top;
+
+    letter-spacing: -1px;
+
+}
+
+
+
+.offer-star {
+
+    position: absolute;
+
+    top: 13%;
+
+    right: 10%;
+
+    color: #d8ccff;
+
+    font-size: 20px;
+
+}
+
+
+
+.promo-side-note {
+
+    position: absolute;
+
+    right: 20px;
+
+    bottom: 14px;
+
+    z-index: 1;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+   SECTION 20: NEWSLETTER
+
+   Elegant typography and reduced spacing.
+
+   ========================================================= */
+
+.newsletter-section {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+
+    align-items: center;
+
+    gap: 42px;
+
+    margin-top: 0;
+
+    margin-bottom: 65px;
+
+    padding: 38px 0;
+
+    border-top: 1px solid var(--line);
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+
+/* SECTION 20A: NEWSLETTER HEADING */
+
+.newsletter-copy h2 {
+
+    margin: 0;
+
+    color: var(--ink);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(27px, 2.7vw, 36px);
+
+    font-weight: 400;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.6px;
+
+}
+
+
+
+/* SECTION 20B: NEWSLETTER HEADING EMPHASIS */
+
+.newsletter-copy h2 em {
+
+    color: var(--taupe);
+
+    font-weight: 400;
+
+    font-style: italic;
+
+}
+
+
+
+/* SECTION 20C: NEWSLETTER DESCRIPTION */
+
+.newsletter-copy > p:last-child {
+
+    max-width: 430px;
+
+    margin: 12px 0 0;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+
+
+
+/* SECTION 20B: NEWSLETTER FORM */
+
+.newsletter-form {
+
+    min-width: 0;
+
+}
+
+
+
+.newsletter-form label {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--ink);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+
+/* SECTION 20C: EMAIL INPUT AND SUBSCRIBE BUTTON */
+
+.newsletter-input-row {
+
+    display: flex;
+
+    width: 100%;
+
+    min-width: 0;
+
+    border-bottom: 1px solid var(--ink);
+
+}
+
+
+
+.newsletter-input-row input {
+
+    flex: 1;
+
+    width: 0;
+
+    min-width: 0;
+
+    height: 50px;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color: var(--ink);
+
+    font-size: 12px;
+
+}
+
+
+
+.newsletter-input-row input:focus {
+
+    box-shadow: inset 0 -2px 0 var(--accent);
+
+}
+
+
+
+.newsletter-input-row button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-shrink: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--ink);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+
+.newsletter-input-row button span {
+
+    font-size: 17px;
+
+}
+
+
+
+.newsletter-note {
+
+    margin: 12px 0 0;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 21: FOOTER
+
+   ========================================================= */
+
+
+
+/* SECTION 21: FOOTER — DARKER WARM IVORY */
+
+.site-footer {
+
+    padding: 55px 32px 0;
+
+    background: #f4f0ff;
+
+}
+
+
+
+/* SECTION 21A: FOOTER COLUMN LAYOUT */
+
+.footer-main {
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.7fr 0.9fr 1fr;
+
+    gap: 40px;
+
+    width: min(100%, var(--max-width));
+
+    margin: 0 auto;
+
+    padding-bottom: 55px;
+
+}
+
+
+
+/* SECTION 21B: FOOTER BRAND */
+
+.footer-logo {
+
+    display: inline-block;
+
+    font-size: 27px;
+
+}
+
+
+
+
+
+/* SECTION 21B: FOOTER BRAND TEXT */
+
+.footer-brand p,
+
+.footer-note p {
+
+    color: #625a72;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+}
+
+
+
+
+
+/* SECTION 21C: FOOTER LINKS */
+
+.footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+}
+
+
+
+.footer-column h3 {
+
+    margin: 5px 0 8px;
+
+    color: var(--ink);
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+
+
+
+/* SECTION 21C: FOOTER LINKS */
+
+.footer-column a,
+
+.footer-note a {
+
+    color: #625a72;
+
+    font-size: 11px;
+
+    transition: color 0.2s ease;
+
+}
+
+
+
+.footer-column a:hover,
+
+.footer-note a:hover {
+
+    color: var(--taupe);
+
+}
+
+
+
+
+
+/* SECTION 21D: FOOTER CLOSING MESSAGE */
+
+.footer-note > span {
+
+    color: var(--taupe);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+
+/* SECTION 21E: COPYRIGHT ROW */
+
+.footer-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    width: min(100%, var(--max-width));
+
+    margin: 0 auto;
+
+    padding: 22px 0;
+
+    border-top: 1px solid #ded4ff;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+}
+
+
+
+.footer-bottom a {
+
+    color: var(--ink);
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 22: PRODUCT NOT FOUND
+
+   ========================================================= */
+
+.product-not-found {
+
+    min-height: 350px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    padding: 50px 0;
+
+}
+
+
+
+.product-not-found h1 {
+
+    margin: 0 0 12px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    font-weight: 400;
+
+}
+
+
+
+.product-not-found > p:not(.eyebrow) {
+
+    color: var(--muted);
+
+}
+
+
+
+.button-dark {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 48px;
+
+    margin-top: 15px;
+
+    padding: 0 22px;
+
+    border-radius: 5px;
+
+    background: var(--ink);
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 23: TABLET RESPONSIVE LAYOUT
+
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .product-layout {
+
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+        gap: 32px;
+
+    }
+
+
+
+    .recommended-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    }
+
+
+
+    .recommended-image {
+
+        height: 280px;
+
+    }
+
+
+
+    .footer-main {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    }
+
+
+
+    .promo-banner {
+
+        gap: 25px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 24: MOBILE NAVIGATION AND PAGE LAYOUT
+
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .navbar,
+
+    .page-container {
+
+        width: calc(100% - 32px);
+
+    }
+
+
+
+    .navbar {
+
+        min-height: 70px;
+
+        gap: 12px;
+
+    }
+
+
+
+    .logo {
+
+        font-size: 26px;
+
+    }
+
+
+
+    .nav-actions {
+
+        gap: 14px;
+
+    }
+
+
+
+    .nav-text,
+
+    .profile-link {
+
+        gap: 5px;
+
+        font-size: 10px;
+
+    }
+
+
+
+    .profile-dp {
+
+        width: 29px;
+
+        height: 29px;
+
+    }
+
+
+
+    .breadcrumb {
+
+        padding: 20px 0;
+
+    }
+
+
+
+    .product-layout {
+
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 30px;
+
+        margin-bottom: 45px;
+
+    }
+
+
+
+    .gallery-column {
+
+        min-height: 360px;
+
+    }
+
+
+
+    .main-product-image {
+
+        min-height: 360px;
+
+    }
+
+
+
+    .product-info {
+
+        padding-top: 0;
+
+    }
+
+
+
+    .product-title {
+
+        font-size: clamp(32px, 8vw, 44px);
+
+    }
+
+
+
+    .product-actions {
+
+        gap: 10px;
+
+    }
+
+
+
+    .cart-form,
+
+    .wishlist-form,
+
+    .add-cart-button,
+
+    .wishlist-button {
+
+        min-height: 60px;
+
+    }
+
+
+
+    .add-cart-button {
+
+        padding: 0 30px;
+
+        font-size: 11px;
+
+    }
+
+
+
+    .wishlist-button {
+
+        gap: 7px;
+
+        padding: 0 8px;
+
+        font-size: 11px;
+
+    }
+
+
+
+    /* SECTION 24A: RECOMMENDED SECTION SPACING */
+
+    .recommended-section {
+
+        margin-bottom: 75px;
+
+    }
+
+
+
+    .section-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+
+
+    .recommended-image {
+
+        height: clamp(190px, 40vw, 260px);
+
+    }
+
+
+
+    .recommended-details h3 {
+
+        font-size: 15px;
+
+    }
+
+
+
+    /* SECTION 24B: PROMOTIONAL BANNER ON MOBILE */
+
+    .promo-banner {
+
+        grid-template-columns: minmax(0, 1fr);
+
+        justify-items: center;
+
+        padding: 35px 24px;
+
+    }
+
+
+
+    .promo-content {
+
+        width: 100%;
+
+    }
+
+
+
+    .promo-offer {
+
+        width: min(75%, 240px);
+
+    }
+
+
+
+    /* SECTION 24C: NEWSLETTER ON MOBILE */
+
+    .newsletter-section {
+
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 30px;
+
+        margin-bottom: 70px;
+
+        padding: 40px 0;
+
+    }
+
+
+
+    /* SECTION 24D: FOOTER ON MOBILE */
+
+    .footer-main {
+
+        gap: 30px 20px;
+
+    }
+
+
+
+    .footer-bottom {
+
+        flex-wrap: wrap;
+
+    }
+
+}
+
+
+
+/* =========================================================
+
+   SECTION 25: SMALL MOBILE SCREENS
+
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+
+        gap: 8px;
+
+    }
+
+
+
+    .logo {
+
+        font-size: 23px;
+
+    }
+
+
+
+    .nav-actions {
+
+        gap: 10px;
+
+    }
+
+
+
+    .nav-text,
+
+    .profile-link {
+
+        font-size: 9px;
+
+    }
+
+
+
+    .nav-icon {
+
+        font-size: 15px;
+
+    }
+
+
+
+    /* SECTION 25A: PRODUCT ACTION BUTTONS */
+
+    .product-actions {
+
+        gap: 8px;
+
+    }
+
+
+
+    .add-cart-button,
+
+    .wishlist-button {
+
+        min-height: 56px;
+
+        padding-left: 7px;
+
+        padding-right: 7px;
+
+        font-size: 10px;
+
+    }
+
+
+
+    .cart-button-label {
+
+        gap: 5px;
+
+    }
+
+
+
+    .cart-button-icon {
+
+        font-size: 15px;
+
+    }
+
+
+
+    .button-arrow {
+
+        right: 5px;
+
+        font-size: 14px;
+
+    }
+
+
+
+    .wishlist-icon {
+
+        font-size: 20px;
+
+    }
+
+
+
+    /* SECTION 25B: RECOMMENDED PRODUCT GRID */
+
+    .recommended-grid {
+
+        gap: 24px 12px;
+
+    }
+
+
+
+    .recommended-image {
+
+        height: 190px;
+
+    }
+
+
+
+    .recommended-details {
+
+        gap: 5px;
+
+    }
+
+
+
+    .recommended-details h3 {
+
+        font-size: 14px;
+
+    }
+
+
+
+    /* SECTION 25C: PROMOTIONAL BANNER NOTE */
+
+    .promo-side-note {
+
+        right: 10px;
+
+        bottom: 10px;
+
+        font-size: 7px;
+
+    }
+
+
+
+    /* SECTION 25D: FOOTER ON SMALL SCREENS */
+
+    .footer-main {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    }
+
+
+
+    .site-footer {
+
+        padding: 45px 16px 0;
+
+    }
+
+}
+
+/* =========================================
+   FINAL COLOR AND HOVER UPDATES
+   ========================================= */
+
+/* Add to Cart: white by default, blue-purple on hover */
+.add-cart-button {
+    background: #ffffff;
+    border: 1px solid #d9d0ef;
+    color: #242127;
+    border-radius: 6px;
+    transition: background 0.2s ease,
+                border-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.add-cart-button:hover {
+    background: #5433eb;
+    border-color: #5433eb;
+    color: #ffffff;
+}
+
+/* Keep icons and arrow consistent with the button text */
+.add-cart-button .cart-button-icon,
+.add-cart-button .button-arrow {
+    color: inherit;
+}
+
+/* Wishlist stays white with a subtle lavender border */
+.wishlist-button {
+    background: #ffffff;
+    border: 1px solid #ded4ff;
+    color: #242127;
+    border-radius: 6px;
+}
+
+.wishlist-button:hover {
+    background: #f7f4ff;
+    border-color: #bcaaff;
+    color: #3921a7;
+}
+
+/* Promotional banner: remove the strong purple/blue overlay */
+.promo-banner {
+    background: #f5f1e9;
+    cursor: pointer;
+}
+
+.promo-image-overlay {
+    background: linear-gradient(
+        90deg,
+        rgba(25, 22, 20, 0.20) 0%,
+        rgba(25, 22, 20, 0.08) 50%,
+        rgba(25, 22, 20, 0.03) 100%
+    );
+}
+
+/* Preserve white text over the natural image */
+.promo-eyebrow,
+.promo-content h2,
+.promo-description,
+.promo-offer,
+.promo-side-note {
+    color: #ffffff;
+}
+
+/* A neutral, understated banner button */
+.promo-button {
+    border-color: rgba(255, 255, 255, 0.85);
+    color: #ffffff;
+}
+
+.promo-button:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #242127;
+}
+
+/* Preserve the existing banner size; add only a subtle hover effect */
+.promo-banner {
+    transition: box-shadow 0.2s ease;
+}
+
+.promo-banner:hover {
+    box-shadow: 0 8px 24px rgba(36, 33, 39, 0.10);
+}
+
+
+/* =========================================================
+   FIX: PRODUCT IMAGE SIZE — MATCH THE INFORMATION COLUMN
+   These selectors match product-details.jsp.
+   ========================================================= */
+
+.product-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: stretch;
+    gap: clamp(36px, 5vw, 80px);
+}
+
+.product-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    align-self: stretch;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.product-detail-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.product-image-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(145deg, #f5f1ff, #e2d8ff);
+    color: #6c55c7;
+    text-align: center;
+}
+
+/* Responsive image layout */
+@media (max-width: 760px) {
+    .product-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .product-image-container {
+        height: 420px;
+        min-height: 420px;
+    }
+
+    .product-detail-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+
+
+/* =====================================================
+   EASYBUY PRODUCT DETAILS — FINAL SPACING ADJUSTMENT
+   ===================================================== */
+
+/* Reduce the side spacing and widen the image column */
+.product-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr) !important;
+    align-items: start !important;
+    column-gap: 30px !important;
+    row-gap: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+}
+
+/* Wider and taller product image */
+.product-image-container {
+    position: relative !important;
+    width: 100% !important;
+    height: 610px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-height: 610px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-self: start !important;
+    overflow: hidden !important;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* Fill the image container without stretching the image */
+.product-detail-image {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* Keep the details aligned with the image */
+.product-info {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding-top: 0 !important;
+    align-self: start !important;
+    box-sizing: border-box;
+}
+
+/* Move the recommended section downward */
+.recommended-section {
+    margin-top: 36px !important;
+    clear: both;
+}
+
+/* Keep the image placeholder aligned */
+.product-image-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(145deg, #f5f1ff, #e2d8ff);
+    color: #6c55c7;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 1050px) {
+    .product-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        column-gap: 22px !important;
+    }
+
+    .product-image-container {
+        height: 480px !important;
+        max-height: 480px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+    .product-layout {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 24px !important;
+    }
+
+    .product-image-container {
+        height: 440px !important;
+        max-height: 440px !important;
+    }
+
+    .recommended-section {
+        margin-top: 30px !important;
+    }
+}

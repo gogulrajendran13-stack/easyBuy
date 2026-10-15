@@ -1,0 +1,831 @@
+
+/* =========================================================
+   EASYBUY - MY ORDERS PAGE
+   Theme: Purple, lavender, white and soft ivory
+   Footer: Matches the Product Details page footer
+   ========================================================= */
+
+/* =========================================================
+   SECTION 1: GLOBAL RESET AND COLOUR VARIABLES
+   ========================================================= */
+:root {
+    --ink: #242127;
+    --paper: #FCFBF8;
+    --white: #FFFFFF;
+    --muted: #77718A;
+    --line: #E3DDF0;
+    --purple: #5433EB;
+    --purple-deep: #3921A7;
+    --lavender: #E9E2FF;
+    --lavender-soft: #F7F4FF;
+    --lavender-accent: #6C55C7;
+
+    --success: #188447;
+    --success-bg: #E7F6EC;
+    --pending: #B86A0B;
+    --pending-bg: #FFF1D9;
+    --danger: #C62828;
+    --danger-bg: #FDEAEA;
+
+    --page-width: 1375px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================================
+   SECTION 2: STICKY HEADER AND NAVBAR
+   Only Home and Profile are displayed.
+   ========================================================= */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 2px 12px rgba(36, 33, 39, 0.04);
+}
+
+.navbar {
+    width: min(calc(100% - 64px), var(--page-width));
+    min-height: 82px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo,
+.footer-logo {
+    display: inline-block;
+    color: #17151B;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.logo span,
+.footer-logo span {
+    color: var(--purple);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+    white-space: nowrap;
+}
+
+.nav-links > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 40px;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.nav-links > a:hover {
+    color: var(--purple);
+}
+
+.profile-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.profile-dp {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--lavender);
+    color: var(--purple-deep);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* =========================================================
+   SECTION 3: MAIN ORDERS PAGE CONTAINER
+   ========================================================= */
+.orders-page {
+    width: min(calc(100% - 64px), 1375px);
+    margin: 42px auto 80px;
+}
+
+/* =========================================================
+   SECTION 4: HERO BANNER IMAGE
+   No purple overlay: the original image colours remain visible.
+   Image location: src/main/webapp/images/categories/order-page.jpg
+   ========================================================= */
+.orders-hero {
+    width: 100%;
+    min-height: 300px;
+    padding: 55px 60px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 28px;
+    color: #FFFFFF;
+    background-color: #6C55C7;
+    background-image: url("../images/categories/my-order-page.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 14px 35px rgba(45, 26, 45, 0.10);
+}
+
+/* Ensure no decorative tint covers the image */
+.orders-hero::before,
+.orders-hero::after {
+    content: none;
+    display: none;
+}
+
+.orders-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+}
+
+.orders-small-text {
+    margin-bottom: 16px;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.18);
+}
+
+.orders-hero h1 {
+    margin-bottom: 17px;
+    color: #FFFFFF;
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -2px;
+    text-shadow: 0 1px 7px rgba(0, 0, 0, 0.18);
+}
+
+.orders-hero p {
+    color: #FFFFFF;
+    font-size: 17px;
+    line-height: 1.65;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================================
+   SECTION 5: ORDER HISTORY HEADING
+   ========================================================= */
+.orders-section {
+    margin-top: 34px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.section-label {
+    margin-bottom: 7px;
+    color: var(--lavender-accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    color: var(--ink);
+    font-size: 31px;
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.orders-heading-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.orders-count-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 0 13px;
+    border-radius: 999px;
+    background: var(--lavender);
+    color: var(--purple-deep);
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   SECTION 6: CONTINUE SHOPPING BUTTON
+   ========================================================= */
+.shop-button {
+    min-height: 47px;
+    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #DED6FF;
+    border-radius: 12px;
+    background: #FFFFFF;
+    color: var(--purple-deep);
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 5px 15px rgba(50, 31, 50, 0.04);
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.shop-button:hover {
+    background: var(--lavender-soft);
+    border-color: #CFC2FF;
+}
+
+/* =========================================================
+   SECTION 7: ORDERS LIST
+   ========================================================= */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* =========================================================
+   SECTION 8: INDIVIDUAL ORDER CARD
+   ========================================================= */
+.order-card {
+    min-width: 0;
+    padding: 30px;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: #FFFFFF;
+    box-shadow: 0 14px 34px rgba(36, 33, 39, 0.055);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+    border-color: #D4C8FF;
+    box-shadow: 0 16px 38px rgba(36, 33, 39, 0.075);
+}
+
+.order-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+.order-label {
+    margin-bottom: 5px;
+    color: var(--lavender-accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.order-card-header h3 {
+    color: var(--ink);
+    font-size: 25px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+/* =========================================================
+   SECTION 9: ORDER DETAILS GRID
+   ========================================================= */
+.order-card-details {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.order-detail {
+    min-width: 0;
+    min-height: 79px;
+    padding: 16px 18px;
+    background: #FCFBFF;
+    border: 1px solid #E6DFFF;
+    border-radius: 15px;
+}
+
+.order-detail > span {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.order-detail strong {
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.order-detail .order-amount {
+    color: #51456F;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+/* =========================================================
+   SECTION 10: STATUS COLOURS
+   Confirmed = green; Pending = orange; Cancelled = red.
+   Status is shown only in the details grid.
+   ========================================================= */
+.order-detail strong.status-confirmed {
+    color: var(--success);
+}
+
+.order-detail strong.status-pending {
+    color: var(--pending);
+}
+
+.order-detail strong.status-cancelled {
+    color: var(--danger);
+}
+
+.order-detail strong.status-other {
+    color: #625D70;
+}
+
+/* =========================================================
+   SECTION 11: ORDER ACTION BUTTONS
+   ========================================================= */
+.order-card-actions {
+    margin-top: 22px;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-top: 1px solid var(--line);
+}
+
+.order-card-actions form {
+    margin: 0;
+}
+
+.view-order-button,
+.items-button,
+.cancel-order-button,
+.primary-button {
+    min-height: 47px;
+    padding: 0 19px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: background 0.2s ease, color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.view-order-button {
+    background: #39284A;
+    border-color: #39284A;
+    color: #FFFFFF;
+}
+
+.view-order-button:hover {
+    background: #291B37;
+    border-color: #291B37;
+}
+
+.items-button {
+    background: var(--lavender-soft);
+    border-color: #E6DFFF;
+    color: var(--purple-deep);
+}
+
+.items-button:hover {
+    background: var(--lavender);
+    border-color: #D4C8FF;
+}
+
+.cancel-order-button {
+    background: #FFFFFF;
+    border-color: #F1C9C9;
+    color: var(--danger);
+}
+
+.cancel-order-button:hover {
+    background: var(--danger-bg);
+    border-color: #E9A8A8;
+}
+
+/* =========================================================
+   SECTION 12: LOGIN AND EMPTY ORDER STATES
+   ========================================================= */
+.no-orders-card {
+    min-height: 320px;
+    padding: 45px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: #FFFFFF;
+    box-shadow: 0 14px 34px rgba(36, 33, 39, 0.04);
+}
+
+.no-orders-icon {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--lavender-soft);
+    color: var(--purple-deep);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.no-orders-card h3 {
+    margin-bottom: 10px;
+    color: var(--ink);
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.no-orders-card p {
+    max-width: 490px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.primary-button {
+    margin-top: 22px;
+    background: var(--purple-deep);
+    border-color: var(--purple-deep);
+    color: #FFFFFF;
+}
+
+.primary-button:hover {
+    background: var(--purple);
+    border-color: var(--purple);
+}
+
+/* =========================================================
+   SECTION 13: EXACT PRODUCT DETAILS FOOTER STYLING
+   Uses the same .site-footer markup as product-details.jsp.
+   ========================================================= */
+.site-footer {
+    width: 100%;
+    margin-top: 0;
+    padding: 65px 32px 0;
+    background: #F5F1FF;
+    color: #25232A;
+    border-top: 1px solid #E2D8FF;
+}
+
+.footer-main {
+    width: min(100%, 1420px);
+    margin: 0 auto;
+    padding-bottom: 55px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 0.9fr 1fr;
+    gap: 40px;
+}
+
+.footer-brand,
+.footer-column,
+.footer-note {
+    min-width: 0;
+}
+
+.footer-logo {
+    margin-bottom: 18px;
+    color: #17151B;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -1.4px;
+}
+
+.footer-logo span {
+    color: var(--purple);
+}
+
+.footer-brand p,
+.footer-note p {
+    color: #77718A;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-column h3 {
+    margin: 5px 0 8px;
+    color: #25232A;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.footer-column a,
+.footer-note a {
+    color: #69647A;
+    font-size: 11px;
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover,
+.footer-note a:hover {
+    color: var(--purple);
+}
+
+.footer-note > span {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--purple);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.footer-bottom {
+    width: min(100%, 1420px);
+    margin: 0 auto;
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid #DED6FF;
+    color: #77718A;
+    font-size: 10px;
+}
+
+.footer-bottom a {
+    color: var(--ink);
+    transition: color 0.2s ease;
+}
+
+.footer-bottom a:hover {
+    color: var(--purple);
+}
+
+/* =========================================================
+   SECTION 14: TABLET RESPONSIVE LAYOUT
+   ========================================================= */
+@media (max-width: 1100px) {
+    .orders-page {
+        width: calc(100% - 48px);
+    }
+
+    .orders-hero {
+        padding: 45px;
+    }
+
+    .order-card {
+        padding: 25px;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 36px;
+    }
+}
+
+/* =========================================================
+   SECTION 15: MOBILE AND SMALL TABLET
+   ========================================================= */
+@media (max-width: 760px) {
+    .navbar {
+        width: calc(100% - 40px);
+        min-height: 74px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .orders-page {
+        width: calc(100% - 32px);
+        margin: 25px auto 55px;
+    }
+
+    .orders-hero {
+        min-height: 250px;
+        padding: 32px 27px;
+        border-radius: 22px;
+    }
+
+    .orders-hero h1 {
+        font-size: clamp(38px, 8vw, 52px);
+    }
+
+    .orders-hero p {
+        font-size: 14px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .orders-heading-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .order-card {
+        padding: 21px;
+        border-radius: 20px;
+    }
+
+    .order-card-details {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .order-detail {
+        min-height: 70px;
+    }
+
+    .order-card-actions {
+        justify-content: flex-start;
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+    }
+}
+
+/* =========================================================
+   SECTION 16: SMALL MOBILE
+   ========================================================= */
+@media (max-width: 480px) {
+    .navbar {
+        width: calc(100% - 32px);
+        min-height: 70px;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        gap: 13px;
+        font-size: 12px;
+    }
+
+    .profile-dp {
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+    }
+
+    .orders-hero {
+        min-height: 220px;
+        padding: 26px 20px;
+    }
+
+    .orders-small-text {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .orders-hero h1 {
+        font-size: 38px;
+        letter-spacing: -1.5px;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .orders-heading-actions {
+        align-items: stretch;
+    }
+
+    .shop-button {
+        padding: 0 13px;
+        font-size: 12px;
+    }
+
+    .order-card {
+        padding: 17px;
+    }
+
+    .order-card-header h3 {
+        font-size: 22px;
+    }
+
+    .order-card-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .order-card-actions > a,
+    .order-card-actions form,
+    .order-card-actions form button {
+        width: 100%;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding-bottom: 35px;
+    }
+
+    .site-footer {
+        padding: 40px 22px 0;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 18px 0;
+        line-height: 1.6;
+    }
+}

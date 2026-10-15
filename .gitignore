@@ -1,0 +1,43 @@
+# Java compiled files
+*.class
+
+# Maven build output
+target/
+
+# Gradle build output
+build/
+
+# Eclipse workspace metadata
+.metadata/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Common local configuration files that may contain credentials
+config.properties
+application-local.properties
+secrets.properties
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Backup files
+*.bak
+*.old
+*~
+
+# Local database dumps and backups
+*.sql.gz
+*.dump
+*.backup
+
+
+.settings/

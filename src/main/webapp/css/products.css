@@ -1,0 +1,2368 @@
+/* =========================================================
+   EASYBUY PRODUCTS PAGE
+   Main color palette and shared design variables
+   ========================================================= */
+:root {
+    --lavender: #e9e2ff;
+    --lavender-dark: #6c55c7;
+    --purple: #5433eb;
+    --purple-deep: #3921a7;
+    --cream: #f7f4ee;
+    --warm-white: #fcfbf8;
+    --white: #fff;
+    --ink: #242127;
+    --muted: #77717b;
+    --soft-ink: #514b55;
+    --line: #e8e3dc;
+    --brown: #8c6c52;
+    --green: #dfe9d9;
+    --yellow: #f4e5b7;
+    --shadow: 0 18px 50px rgba(45, 35, 60, .08);
+    --radius-large: 32px;
+    --radius-medium: 22px;
+    --radius-small: 14px;
+}
+
+
+/* =========================================================
+   SECTION 1: GLOBAL RESET AND BASE STYLES
+   ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+.products-page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SECTION 2: SHARED LABELS AND BUTTONS
+   ========================================================= */
+
+/* Small uppercase section labels */
+.eyebrow {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .18em;
+    color: var(--lavender-dark);
+    text-transform: uppercase;
+}
+
+/* Shared button layout */
+.dark-button,
+.light-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    min-height: 48px;
+    padding: 0 21px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform .25s, background .25s, color .25s;
+}
+
+/* Dark button appearance */
+.dark-button {
+    background: var(--ink);
+    color: white;
+}
+
+.dark-button:hover {
+    transform: translateY(-3px);
+    background: var(--purple);
+}
+
+/* Button arrow icons */
+.dark-button span,
+.light-button span {
+    font-size: 17px;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   SECTION 3: HEADER AND NAVIGATION
+   ========================================================= */
+
+/* Main header layout */
+.products-header {
+    min-height: 82px;
+    padding: 0 5.2%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 28px;
+    background: rgba(252, 251, 248, .96);
+}
+
+
+/* =====================================================
+   HEADER LOGO — EASY BLACK, BUY BLUE
+   ===================================================== */
+
+.products-brand {
+    width: fit-content;
+    font-size: 29px;
+    font-weight: 850;
+    letter-spacing: -0.07em;
+    color: #242127;
+    text-decoration: none;
+}
+
+/* Buy text */
+.products-brand span {
+    color: #5433EB;
+}
+
+
+/* Dashboard and Shop navigation */
+.products-main-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.products-nav-item {
+    padding: 11px 20px;
+    border-radius: 100px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+/* SECTION 3A: HEADER NAVIGATION - CLEAN WHITE STYLE */
+
+/* Default Dashboard and Shop links */
+.products-nav-item {
+    padding: 11px 20px;
+    border-radius: 100px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    transition: color 0.25s, background 0.25s;
+}
+
+/* Dashboard and Shop hover effect */
+.products-nav-item:hover {
+    background: var(--lavender);
+    color: var(--purple-deep);
+}
+
+/* Active Shop link: white background, purple text */
+.products-nav-item.active {
+    background: transparent;
+    color: var(--purple);
+}
+
+/* Keep the active Shop link white on hover too */
+.products-nav-item.active:hover {
+    background: var(--lavender);
+    color: var(--purple-deep);
+}
+
+/* Wishlist, Cart and Profile alignment */
+.products-header-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 23px;
+}
+
+/* Header action links */
+.products-header-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--soft-ink);
+    font-size: 11px;
+    font-weight: 700;
+    transition: color .2s, transform .2s;
+}
+
+.products-header-action:hover {
+    color: var(--purple);
+    transform: translateY(-2px);
+}
+
+/* Header SVG icon dimensions */
+.products-action-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+}
+
+/* Header SVG icon appearance */
+.products-action-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Short divider line beneath the header */
+.products-header-line {
+    width: 95%;
+    height: 1px;
+    margin: 0 auto;
+    background: var(--line);
+}
+
+
+/* =========================================================
+   SECTION 4: MAIN PROMOTIONAL HERO CAROUSEL
+   Shared layout for all three main promotional slides
+   ========================================================= */
+
+/* SECTION 4: MAIN PROMOTIONAL HERO CAROUSEL */
+.products-promo-carousel {
+    position: relative;
+    width: calc(100% - 48px);
+    height: 340px;
+    margin: 24px;
+    overflow: hidden;
+    border-radius: var(--radius-large);
+    background: #333;
+}
+
+
+/* Main carousel track */
+.products-promo-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Default state for each promotional slide */
+.products-promo-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .7s, visibility .7s;
+}
+
+/* Currently visible promotional slide */
+.products-promo-slide.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+/* Background image for promotional slides */
+.products-promo-slide > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.1s;
+}
+
+/* Promotional image hover zoom */
+.products-promo-slide:hover > img {
+    transform: scale(1.025);
+}
+
+/* Dark overlay behind promotional text */
+.products-promo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(20, 17, 22, .82),
+        rgba(20, 17, 22, .55) 42%,
+        rgba(20, 17, 22, .08) 80%
+    );
+}
+
+/* Promotional slide text container */
+.products-promo-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    padding: 58px 6%;
+    color: white;
+}
+
+/* Promotional eyebrow text */
+.products-promo-eyebrow {
+    display: block;
+    color: rgba(255, 255, 255, .78);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .18em;
+}
+
+/* Promotional slide headings */
+.products-promo-content h1,
+.products-promo-content h2 {
+    margin-top: 13px;
+    max-width: 620px;
+    font-size: clamp(36px, 4.6vw, 66px);
+    line-height: .98;
+    letter-spacing: -.05em;
+}
+
+/* Highlighted words in promotional headings */
+.products-promo-content h2 span {
+    color: #f2e2a9;
+}
+
+/* Promotional slide descriptions */
+.products-promo-content p {
+    max-width: 465px;
+    margin: 20px 0 24px;
+    color: rgba(255, 255, 255, .82);
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SECTION 4A: MAIN SLIDE 1 - EVERYDAY SHOPPING OFFER
+   ========================================================= */
+
+/* Up-to discount offer */
+.promo-offer-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.promo-offer-text span,
+.promo-offer-text small {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .17em;
+}
+
+.promo-offer-text strong {
+    font-size: 29px;
+    line-height: 1.2;
+    color: var(--yellow);
+}
+
+
+/* =========================================================
+   SECTION 4B: MAIN SLIDE 2 - BANK OFFER
+   ========================================================= */
+
+/* Bank offer labels and card offer row */
+.bank-offer-row,
+.credit-card-offer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0 10px;
+}
+
+/* Bank and payment card labels */
+.bank-offer-card,
+.credit-card-offer span {
+    padding: 9px 13px;
+    border: 1px solid rgba(255, 255, 255, .55);
+    border-radius: 7px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .07em;
+}
+
+/* Plus and multiplication symbols */
+.bank-offer-divider,
+.credit-card-offer b {
+    font-size: 17px;
+}
+
+/* Small promotional note */
+.products-promo-note {
+    color: rgba(255, 255, 255, .78);
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SECTION 4C: MAIN CAROUSEL NAVIGATION DOTS
+   ========================================================= */
+
+/* Shared dot navigation position */
+.products-promo-dots,
+.style-hero-dots {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+/* Main and secondary carousel dots */
+.products-promo-dot,
+.style-hero-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, .55);
+    cursor: pointer;
+    transition: width .25s, background .25s;
+}
+
+/* Active main and secondary carousel dots */
+.products-promo-dot.active,
+.style-hero-dot.active {
+    width: 24px;
+    background: white;
+}
+
+
+/* =========================================================
+   SECTION 5: SECONDARY FEATURE HERO CAROUSEL
+   Three slides: Style, New Collection, Payment/Technology
+   ========================================================= */
+
+/* Secondary carousel outer container */
+.style-hero-carousel {
+    position: relative;
+    width: calc(100% - 48px);
+    margin: 54px 24px 0;
+    overflow: hidden;
+    border-radius: var(--radius-large);
+    background: var(--lavender);
+}
+
+/* Secondary carousel track */
+.style-hero-track {
+    position: relative;
+    min-height: 450px;
+}
+
+/* Shared secondary slide layout */
+.style-hero-slide {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: .88fr 1.12fr;
+    min-height: 450px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .65s, visibility .65s;
+}
+
+/* Currently visible secondary slide */
+.style-hero-slide.active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+/* Text side for the first two slides */
+.style-hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 58px clamp(28px, 5vw, 72px);
+}
+
+/* Headings for the first two slides */
+.style-hero-copy h2 {
+    margin-top: 14px;
+    font-size: clamp(38px, 4.6vw, 66px);
+    line-height: .98;
+    letter-spacing: -.055em;
+}
+
+/* Highlighted italic text in secondary headings */
+.style-hero-copy h2 em {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    color: var(--purple);
+}
+
+/* Descriptions for the first two slides */
+.style-hero-copy p {
+    max-width: 420px;
+    margin: 23px 0 17px;
+    color: var(--soft-ink);
+    font-size: 14px;
+}
+
+/* Small note under secondary slide descriptions */
+.style-hero-note {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* Small decorative dot beside the note */
+.style-hero-note span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #789267;
+}
+
+/* Image container for the first two slides */
+.style-hero-image {
+    min-height: 450px;
+    overflow: hidden;
+}
+
+/* Images for the first two slides */
+.style-hero-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    object-fit: cover;
+    transition: transform .8s;
+}
+
+/* Hover zoom for the first two slide images */
+.style-hero-slide:hover .style-hero-image img {
+    transform: scale(1.025);
+}
+
+/* Secondary carousel dots are positioned under the text side */
+.style-hero-dots {
+    bottom: 18px;
+    left: 25%;
+}
+
+/* Secondary carousel dot colors */
+.style-hero-dot {
+    background: rgba(84, 51, 235, .28);
+}
+
+.style-hero-dot.active {
+    background: var(--purple);
+}
+
+
+/* =========================================================
+   SECTION 5A: SECONDARY SLIDE 3 - PAYMENT AND TECHNOLOGY
+   ========================================================= */
+
+/* Entire payment/technology slide background */
+.payment-hero-slide {
+    background: #f2edff;
+}
+
+/* Payment banner image column */
+.payment-hero-image {
+    min-height: 450px;
+    overflow: hidden;
+    background: #ded5f7;
+}
+
+/* Payment banner image */
+.payment-hero-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    object-fit: cover;
+    transition: transform .8s;
+}
+
+/* Payment banner image hover zoom */
+.payment-hero-slide:hover .payment-hero-image img {
+    transform: scale(1.025);
+}
+
+/* Payment banner text column */
+.payment-hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 36px clamp(24px, 3.8vw, 54px);
+    color: var(--ink);
+}
+
+/* Payment banner heading */
+.payment-hero-copy h2 {
+    margin-top: 12px;
+    font-size: clamp(31px, 3.2vw, 46px);
+    line-height: 1;
+    letter-spacing: -.055em;
+}
+
+/* Highlighted words in payment banner heading */
+.payment-hero-copy h2 em {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    color: var(--purple);
+}
+
+/* Payment banner description */
+.payment-hero-copy > p {
+    max-width: 390px;
+    margin: 15px 0 15px;
+    color: var(--soft-ink);
+    font-size: 12px;
+}
+
+/* List of three payment and technology offers */
+.payment-hero-offers {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 3px;
+}
+
+
+/* Individual payment offer row with shorter divider lines */
+.payment-hero-offer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: none;
+}
+
+
+/* Short divider line with wider spacing on both ends */
+.payment-hero-offer::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+
+    /* Increase the empty space at the left and right */
+    left: 90px;
+    right: 90px;
+
+    height: 1px;
+    background: rgba(36, 33, 39, 0.12);
+}
+
+
+
+/* Number icon for each offer */
+.payment-offer-icon {
+    flex: 0 0 29px;
+    width: 29px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ded5ff;
+    color: var(--purple);
+    font-size: 9px;
+    font-weight: 900;
+}
+
+/* Text container within each offer */
+.payment-hero-offer > div {
+    min-width: 0;
+}
+
+/* Offer title */
+.payment-hero-offer strong {
+    display: block;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* Offer description */
+.payment-hero-offer small {
+    display: block;
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   SECTION 6: FEATURED COLLECTIONS
+   ========================================================= */
+
+/* Space around the featured collections section */
+.featured-section {
+    padding: 82px 5.2% 60px;
+}
+
+/* Heading and view-all link layout */
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 28px;
+}
+
+/* Featured collection heading */
+.section-heading h2 {
+    margin-top: 8px;
+    font-size: clamp(34px, 4vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -.055em;
+}
+
+/* Featured collection description */
+.section-heading p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* View all products link */
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--ink);
+    white-space: nowrap;
+    font-size: 11px;
+    font-weight: 800;
+    transition: color .2s, border-color .2s;
+}
+
+/* Arrow within view all products link */
+.text-link span {
+    font-size: 18px;
+    transition: transform .2s;
+}
+
+/* View all link hover effects */
+.text-link:hover {
+    color: var(--purple);
+    border-color: var(--purple);
+}
+
+.text-link:hover span {
+    transform: translateX(4px);
+}
+
+/* Five collection cards in a row */
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+}
+
+/* Individual collection card */
+.collection-card {
+    position: relative;
+    min-height: 390px;
+    height: clamp(300px, 26vw, 420px);
+    overflow: hidden;
+    border-radius: 25px;
+    background: #ded8cf;
+    isolation: isolate;
+}
+
+/* Collection card image */
+.collection-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .7s;
+    z-index: -2;
+}
+
+/* Collection image hover zoom */
+.collection-card:hover img {
+    transform: scale(1.06);
+}
+
+/* Dark gradient over the collection image */
+.collection-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(15, 14, 15, .02) 25%,
+        rgba(15, 14, 15, .72)
+    );
+    z-index: -1;
+}
+
+/* Collection title and description */
+.collection-content {
+    position: absolute;
+    left: 21px;
+    right: 16px;
+    bottom: 20px;
+    color: white;
+}
+
+/* Collection title */
+.collection-content h3 {
+    font-size: clamp(19px, 1.8vw, 27px);
+    line-height: 1.1;
+    letter-spacing: -.04em;
+}
+
+/* Collection description */
+.collection-content p {
+    margin-top: 7px;
+    color: rgba(255, 255, 255, .88);
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SECTION 7: PRODUCT LISTING AREA
+   ========================================================= */
+
+/* Main product listing background and spacing */
+.product-area {
+    padding: 64px 5.2% 90px;
+    background: #f7f4ee;
+}
+
+/* Product heading and product count layout */
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+/* Current category title */
+.product-header h2 {
+    margin-top: 8px;
+    font-size: clamp(34px, 4vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -.05em;
+}
+
+/* Current category description */
+.product-header p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Product count badge */
+.product-count {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 11px 16px;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    background: white;
+    white-space: nowrap;
+}
+
+/* Product count number */
+.product-count strong {
+    font-size: 18px;
+}
+
+/* Product count label */
+.product-count span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SECTION 7A: PRODUCT LAYOUT AND FILTER SIDEBAR
+   ========================================================= */
+
+/* Sidebar on the left and product content on the right */
+.product-layout {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    align-items: start;
+    gap: 28px;
+}
+
+/* Filter sidebar container */
+.filter-sidebar {
+    position: sticky;
+    top: 20px;
+    padding: 28px 26px;
+    border: 1px solid var(--line);
+    border-radius: 25px;
+    background: white;
+}
+
+/* Filter heading section */
+.filter-heading {
+    padding-bottom: 21px;
+    border-bottom: 1px solid var(--line);
+}
+
+/* Filter sidebar title */
+.filter-heading h3 {
+    margin-top: 8px;
+    font-size: 21px;
+    letter-spacing: -.04em;
+}
+
+/* Filter form layout */
+.filter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    padding-top: 20px;
+}
+
+/* Each individual filter group */
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Filter field labels */
+.filter-group label {
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--soft-ink);
+}
+
+/* Search input, price inputs and dropdowns */
+.filter-group input,
+.filter-group select {
+    width: 100%;
+    min-width: 0;
+    height: 47px;
+    padding: 0 13px;
+    outline: none;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fbfaf8;
+    color: var(--ink);
+    font-size: 11px;
+    transition: border-color .2s, box-shadow .2s, background .2s;
+}
+
+/* Focus style for filter inputs */
+.filter-group input:focus,
+.filter-group select:focus {
+    border-color: var(--purple);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(84, 51, 235, .08);
+}
+
+/* Minimum and maximum price input layout */
+.price-inputs {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 7px;
+}
+
+/* Divider between price fields */
+.price-inputs span {
+    color: var(--muted);
+}
+
+/* Apply and clear filter buttons */
+.filter-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 3px;
+}
+
+/* Apply filters button */
+.apply-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 13px;
+    background: var(--ink);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+}
+
+/* Arrow inside the apply button */
+.apply-button span {
+    font-size: 17px;
+}
+
+/* Apply button hover */
+.apply-button:hover {
+    background: var(--purple);
+    transform: translateY(-2px);
+}
+
+/* Clear filters link */
+.clear-button {
+    padding: 5px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.clear-button:hover {
+    color: var(--purple);
+}
+
+
+/* =========================================================
+   SECTION 7B: PRODUCT GRID
+   ========================================================= */
+
+/* Product content container */
+.products-content {
+    min-width: 0;
+}
+
+/* Three product cards per row on larger screens */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Individual product card */
+.product-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: white;
+    box-shadow: 0 10px 32px rgba(36, 33, 39, .035);
+    transition: transform .28s, box-shadow .28s, border-color .28s;
+}
+
+/* Product card hover effect */
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #d8cef9;
+    box-shadow: 0 18px 42px rgba(55, 39, 100, .11);
+}
+
+
+/* =========================================================
+   SECTION 7C: DECORATIVE PRODUCT VISUAL
+   ========================================================= */
+
+/* Decorative graphic used on each product card */
+.product-visual {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #eee7ff, #d7cafa);
+}
+
+/* Small text at the top of the product graphic */
+.visual-top {
+    position: absolute;
+    z-index: 2;
+    top: 17px;
+    left: 18px;
+    right: 18px;
+    display: flex;
+    justify-content: space-between;
+    color: #89809d;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: .18em;
+}
+
+/* Shared shape settings */
+.visual-shape {
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* First decorative circle */
+.visual-shape-one {
+    width: 190px;
+    height: 190px;
+    top: 40px;
+    right: -25px;
+    background: rgba(173, 151, 250, .32);
+}
+
+/* Second decorative circle */
+.visual-shape-two {
+    width: 160px;
+    height: 160px;
+    bottom: -55px;
+    left: -20px;
+    background: rgba(255, 255, 255, .46);
+}
+
+/* Center circle and symbol */
+.visual-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    place-items: center;
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .76);
+    color: var(--purple);
+    font-size: 25px;
+    transform: translate(-50%, -50%);
+    transition: transform .35s;
+}
+
+/* Center circle hover animation */
+.product-card:hover .visual-circle {
+    transform: translate(-50%, -50%) rotate(12deg) scale(1.06);
+}
+
+/* easyBuy text at the bottom of the graphic */
+.visual-brand {
+    position: absolute;
+    right: 18px;
+    bottom: 15px;
+    color: #9186aa;
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: -.04em;
+}
+
+
+/* =========================================================
+   SECTION 7D: PRODUCT NAME, PRICE AND DETAILS LINK
+   ========================================================= */
+
+/* Product information container */
+.product-card-content {
+    padding: 22px;
+}
+
+/* Small product category label */
+.product-category {
+    display: block;
+    color: var(--lavender-dark);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: .18em;
+}
+
+/* Product name */
+.product-name {
+    min-height: 48px;
+    margin-top: 8px;
+    font-size: 17px;
+    line-height: 1.35;
+    letter-spacing: -.035em;
+    overflow-wrap: anywhere;
+}
+
+/* Product price and details link row */
+.product-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 17px;
+    border-top: 1px solid var(--line);
+}
+
+/* Product price */
+.product-price {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: -.045em;
+    white-space: nowrap;
+}
+
+/* Rupee symbol */
+.product-price small {
+    margin-right: 3px;
+    font-size: 12px;
+    vertical-align: 3px;
+}
+
+/* View product details link */
+.view-product {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 41px;
+    padding: 0 14px;
+    border-radius: 100px;
+    background: var(--lavender);
+    color: var(--purple);
+    font-size: 10px;
+    font-weight: 850;
+    white-space: nowrap;
+    transition: background .2s, color .2s, transform .2s;
+}
+
+/* Arrow inside view product link */
+.view-product span {
+    font-size: 15px;
+}
+
+/* View product hover effect */
+.view-product:hover {
+    background: var(--purple);
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SECTION 7E: EMPTY PRODUCT RESULTS MESSAGE
+   ========================================================= */
+
+/* Empty state container */
+.empty-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    padding: 45px;
+    border: 1px dashed #d7cdef;
+    border-radius: 25px;
+    background: white;
+    text-align: center;
+}
+
+/* Empty state symbol */
+.empty-symbol {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    background: var(--lavender);
+    color: var(--purple);
+    font-size: 27px;
+}
+
+/* Empty state heading */
+.empty-products h3 {
+    margin-top: 8px;
+    font-size: 26px;
+    letter-spacing: -.04em;
+}
+
+/* Empty state description */
+.empty-products p {
+    max-width: 360px;
+    margin: 9px 0 22px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SECTION 8: FOOTER
+   ========================================================= */
+
+/* Footer background and spacing */
+.footer {
+    padding: 56px 5.2% 28px;
+    background: #242127;
+    color: white;
+}
+
+/* Footer columns */
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr auto;
+    align-items: end;
+    gap: 40px;
+}
+
+/* Footer easyBuy logo */
+.footer-logo {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -.07em;
+}
+
+/* Highlight Buy in the footer logo */
+.footer-logo span {
+    color: #b8a5ff;
+}
+
+/* Footer description paragraphs */
+.footer-brand p,
+.footer-about p {
+    max-width: 300px;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, .58);
+    font-size: 11px;
+}
+
+/* Footer eyebrow color */
+.footer-about .eyebrow {
+    color: #b8a5ff;
+}
+
+/* Footer about heading */
+.footer-about h3 {
+    margin-top: 9px;
+    font-size: 24px;
+    line-height: 1.15;
+    letter-spacing: -.04em;
+}
+
+/* Footer copyright and brand information */
+.footer-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items: flex-end;
+    color: rgba(255, 255, 255, .55);
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SECTION 9: RESPONSIVE LAYOUT - MEDIUM SCREENS
+   Screens up to 1200px
+   ========================================================= */
+@media (max-width: 1200px) {
+
+    /* Featured collections can scroll horizontally */
+    .collection-grid {
+        grid-template-columns: repeat(5, minmax(175px, 1fr));
+        overflow-x: auto;
+        padding-bottom: 8px;
+    }
+
+    .collection-card {
+        height: 350px;
+        min-height: 350px;
+    }
+
+    /* Slightly reduce sidebar width */
+    .product-layout {
+        grid-template-columns: 250px minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    /* Two product cards per row */
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .product-visual {
+        height: 230px;
+    }
+}
+
+
+/* =========================================================
+   SECTION 10: RESPONSIVE LAYOUT - TABLETS
+   Screens up to 850px
+   ========================================================= */
+@media (max-width: 850px) {
+
+    /* Header becomes two columns */
+    .products-header {
+        grid-template-columns: 1fr auto;
+        padding: 15px 5%;
+        gap: 10px;
+    }
+
+   
+/* HEADER NAVIGATION: Rounded lavender container */
+.products-main-nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border: 1px solid #e9e1f7;
+    border-radius: 100px;
+    background: #f4effc;
+    box-shadow: 0 5px 16px rgba(50, 35, 80, 0.06);
+}
+
+/* Dashboard and Shop buttons */
+.products-nav-item {
+    padding: 11px 23px;
+    border-radius: 100px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    transition: background .25s, color .25s, box-shadow .25s;
+}
+
+/* Subtle hover effect */
+.products-nav-item:hover {
+    background: #ffffff;
+    color: var(--purple);
+}
+
+/* Active Shop button: white background */
+.products-nav-item.active {
+    background: #ffffff;
+    color: var(--purple);
+    box-shadow: 0 2px 8px rgba(50, 35, 80, 0.08);
+}
+
+
+    /* Header action icons stay at the top right */
+    .products-header-actions {
+        grid-column: 2;
+        grid-row: 1;
+        gap: 13px;
+    }
+
+    /* Hide header action text on smaller screens */
+    .products-action-label {
+        display: none;
+    }
+
+    /* Tablet: reduced promotional banner */
+.products-promo-carousel {
+    width: calc(100% - 28px);
+    margin: 14px;
+    height: 320px;
+    border-radius: 24px;
+}
+
+
+    .products-promo-content {
+        padding: 38px 7%;
+    }
+
+    /* Increase contrast for promotional text */
+    .products-promo-overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(20, 17, 22, .78),
+            rgba(20, 17, 22, .28)
+        );
+    }
+
+    /* Secondary carousel tablet spacing */
+    .style-hero-carousel {
+        width: calc(100% - 28px);
+        margin: 35px 14px 0;
+    }
+
+    /* Stack secondary slide content and image */
+    .style-hero-slide {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hide inactive slides completely on tablet */
+    .style-hero-slide:not(.active) {
+        display: none;
+    }
+
+    /* Secondary slide text spacing */
+    .style-hero-copy {
+        padding: 38px 30px;
+    }
+
+    /* Secondary slide images */
+    .style-hero-image,
+    .style-hero-image img {
+        min-height: 280px;
+        height: 280px;
+    }
+
+    /* Center secondary dots below stacked content */
+    .style-hero-dots {
+        left: 50%;
+    }
+
+    /* Reduce section spacing */
+    .featured-section {
+        padding: 55px 5% 35px;
+    }
+
+    .product-area {
+        padding: 50px 5% 65px;
+    }
+
+    /* Filter sidebar moves above product grid */
+    .product-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-sidebar {
+        position: static;
+    }
+
+    /* Filters use two columns on tablet */
+    .filter-form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Filter buttons span both columns */
+    .filter-actions {
+        grid-column: 1 / -1;
+    }
+
+    /* Footer switches to two columns */
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Copyright row spans the footer width */
+    .footer-meta {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+/* =========================================================
+   SECTION 11: RESPONSIVE LAYOUT - MOBILE PHONES
+   Screens up to 560px
+   ========================================================= */
+@media (max-width: 560px) {
+
+    /* Mobile header branding and icons */
+    .products-brand {
+        font-size: 25px;
+    }
+
+    .products-header-actions {
+        gap: 10px;
+    }
+
+    .products-action-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Mobile: navigation spacing */
+.products-nav-item {
+    padding: 9px 15px;
+}
+
+/* Mobile: reduced promotional banner */
+.products-promo-carousel {
+    height: 300px;
+}
+
+    /* Promotional heading and paragraph sizing */
+    .products-promo-content h1,
+    .products-promo-content h2 {
+        font-size: 38px;
+    }
+
+    .products-promo-content p {
+        font-size: 12px;
+    }
+
+    /* Compact payment labels on mobile */
+    .bank-offer-row,
+    .credit-card-offer {
+        gap: 7px;
+    }
+
+    .bank-offer-card,
+    .credit-card-offer span {
+        padding: 8px;
+        font-size: 8px;
+    }
+
+    /* Payment and technology slide spacing */
+    .payment-hero-copy {
+        padding: 30px 23px 48px;
+    }
+
+    .payment-hero-copy h2 {
+        font-size: 34px;
+    }
+
+    .payment-hero-copy > p {
+        font-size: 12px;
+    }
+
+    .payment-hero-offer {
+        gap: 10px;
+        padding: 9px 0;
+    }
+
+    .payment-hero-offer strong {
+        font-size: 10px;
+    }
+
+    .payment-hero-offer small {
+        font-size: 9px;
+    }
+
+    /* Section heading stacks vertically */
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .section-heading h2 {
+        font-size: 36px;
+    }
+
+    /* Featured collections scroll horizontally */
+    .collection-grid {
+        grid-template-columns: repeat(5, 210px);
+        gap: 11px;
+    }
+
+    .collection-card {
+        height: 300px;
+        min-height: 300px;
+        border-radius: 20px;
+    }
+
+    /* Product heading stacks on mobile */
+    .product-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    /* Filters become a single column */
+    .filter-form {
+        grid-template-columns: 1fr;
+    }
+
+    /* One product card per row */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-visual {
+        height: 270px;
+    }
+
+    /* Product card spacing */
+    .product-card-content {
+        padding: 20px;
+    }
+
+    .product-name {
+        min-height: 0;
+    }
+
+    .product-card-bottom {
+        align-items: center;
+    }
+
+    /* Footer becomes a single column */
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .footer-meta {
+        grid-column: auto;
+    }
+}
+
+/* =========================================================
+   SECTION 12: UPDATED MAIN PROMOTIONAL BANNER SIZE
+   Reduce the height of the top carousel
+   ========================================================= */
+
+.products-promo-carousel {
+    height: clamp(360px, 34vw, 480px);
+}
+
+
+/* =========================================================
+   SECTION 13: MAIN PROMOTIONAL BANNER FONT SIZES
+   Improve readability of headings and descriptions
+   ========================================================= */
+
+.products-promo-content {
+    max-width: 720px;
+}
+
+.products-promo-content h1,
+.products-promo-content h2 {
+    font-size: clamp(40px, 4.2vw, 62px);
+}
+
+.products-promo-content p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.products-promo-eyebrow {
+    font-size: 11px;
+}
+
+.products-promo-note {
+    font-size: 11px;
+}
+
+.bank-offer-card,
+.credit-card-offer span {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SECTION 14: EQUAL HEIGHT FOR ALL SECONDARY HERO SLIDES
+   Every slide uses the same overall height and grid layout
+   ========================================================= */
+
+.style-hero-track {
+    height: 450px;
+    min-height: 450px;
+}
+
+.style-hero-slide {
+    height: 450px;
+    min-height: 450px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.style-hero-slide.active {
+    height: 450px;
+}
+
+/* Keep the first two slide images at the same height */
+.style-hero-image,
+.style-hero-image img {
+    height: 450px;
+    min-height: 450px;
+}
+
+
+/* =========================================================
+   SECTION 15: PAYMENT AND TECHNOLOGY BANNER IMAGE WIDTH
+   Expand the image and reduce unused text-side space
+   ========================================================= */
+
+.payment-hero-slide {
+    grid-template-columns: 1.12fr .88fr;
+}
+
+.payment-hero-image,
+.payment-hero-image img {
+    height: 450px;
+    min-height: 450px;
+}
+
+/* Reduce excessive space around the payment banner text */
+.payment-hero-copy {
+    padding: 28px 30px;
+}
+
+.payment-hero-copy h2 {
+    font-size: clamp(32px, 3vw, 44px);
+}
+
+.payment-hero-copy > p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.payment-hero-offer strong {
+    font-size: 12px;
+}
+
+.payment-hero-offer small {
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SECTION 16: REDUCE PRODUCT PRICE BOLDNESS
+   Keep the price size and value, but make the weight lighter
+   ========================================================= */
+
+.product-price {
+    font-weight: 600;
+}
+
+.product-price small {
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   SECTION 17: TABLET RESPONSIVE ADJUSTMENTS
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    /* Let each secondary slide grow naturally when stacked */
+    .style-hero-track {
+        height: auto;
+        min-height: 0;
+    }
+
+    .style-hero-slide,
+    .style-hero-slide.active {
+        height: auto;
+        min-height: 0;
+        grid-template-columns: 1fr;
+    }
+
+    .style-hero-image,
+    .style-hero-image img {
+        height: 280px;
+        min-height: 280px;
+    }
+
+    /* Keep the payment image and text stacked on tablets */
+    .payment-hero-slide {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-hero-image,
+    .payment-hero-image img {
+        height: 280px;
+        min-height: 280px;
+    }
+
+    .payment-hero-copy {
+        padding: 32px 30px 48px;
+    }
+
+    .products-promo-carousel {
+        height: 400px;
+    }
+}
+
+
+/* =========================================================
+   SECTION 18: MOBILE RESPONSIVE ADJUSTMENTS
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .products-promo-carousel {
+        height: 370px;
+    }
+
+    .products-promo-content h1,
+    .products-promo-content h2 {
+        font-size: 36px;
+    }
+
+    .products-promo-content p {
+        font-size: 13px;
+    }
+
+    .style-hero-image,
+    .style-hero-image img {
+        height: 240px;
+        min-height: 240px;
+    }
+
+    .payment-hero-image,
+    .payment-hero-image img {
+        height: 240px;
+        min-height: 240px;
+    }
+
+    .payment-hero-copy {
+        padding: 28px 22px 48px;
+    }
+}
+
+/* =========================================================
+   EASYBUY PRODUCTS PAGE — CONFIRMED DESIGN ADJUSTMENTS
+   1. Rounded navigation tabs on white header
+   2. Slightly reposition the easyBuy brand
+   3. Reduce the main promotional banner by 10%
+   4. Preserve text visibility and the header divider
+   ========================================================= */
+
+/* Keep the header white and preserve its existing layout */
+.products-header {
+    background: #ffffff;
+}
+
+/* Move the easyBuy brand slightly to the right */
+.products-brand {
+    position: relative;
+    left: 4px;
+}
+
+/* Dashboard and Shop navigation */
+.products-nav-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 10px 18px;
+    background: transparent;
+    color: var(--ink);
+    text-decoration: none;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Subtle rounded hover background */
+.products-nav-item:hover {
+    background: #f4f1ff;
+    color: var(--purple);
+}
+
+/* Rounded active tab */
+.products-nav-item.active {
+    background: #f0ebff;
+    color: var(--purple);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(84, 51, 235, 0.10);
+}
+
+/* Preserve active-tab appearance on hover */
+.products-nav-item.active:hover {
+    background: #e9e2ff;
+    color: var(--purple-deep);
+}
+
+/* Preserve the existing divider under the header */
+.products-header-line {
+    display: block;
+}
+
+/* Reduce the main promotional banner height by 10%.
+   The existing CSS uses 500px as the desktop base height. */
+.products-promo-carousel {
+    height: 450px;
+}
+
+/* Tablet banner: existing 400px becomes 360px */
+@media (max-width: 850px) {
+    .products-promo-carousel {
+        height: 360px;
+    }
+}
+
+/* Mobile banner: existing 370px becomes 333px */
+@media (max-width: 560px) {
+    .products-promo-carousel {
+        height: 333px;
+    }
+}
+
+/* =========================================================
+   DASHBOARD AND SHOP — MATCH REFERENCE SCREENSHOT
+   ========================================================= */
+
+/* Outer rounded navigation container */
+.products-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 5px;
+    border-radius: 100px;
+    background: #F4EFFA;
+    border: 1px solid #EAE2F5;
+    box-shadow: 0 5px 16px rgba(55, 35, 80, 0.06);
+}
+
+/* Dashboard and Shop links */
+.products-nav-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 100px;
+    background: transparent;
+    color: #696374;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: none;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Subtle Dashboard hover effect */
+.products-nav-item:hover {
+    background: rgba(255, 255, 255, 0.65);
+    color: #5433EB;
+}
+
+/* Selected Shop tab */
+.products-nav-item.active {
+    background: #FFFFFF;
+    color: #5433EB;
+    box-shadow: 0 3px 10px rgba(55, 35, 80, 0.10);
+}
+
+/* Keep Shop highlighted when hovered */
+.products-nav-item.active:hover {
+    background: #FFFFFF;
+    color: #5433EB;
+}
+
+/* Preserve readable navigation on smaller screens */
+@media (max-width: 560px) {
+    .products-nav {
+        gap: 2px;
+        padding: 4px;
+    }
+
+    .products-nav-item {
+        min-height: 38px;
+        padding: 0 15px;
+        font-size: 13px;
+    }
+}
+
+/* ==========================================
+   DASHBOARD & SHOP — MATCH THE REFERENCE
+   ========================================== */
+
+.products-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    padding: 5px;
+    border-radius: 100px;
+
+    background: #F4EFFA;
+    border: 1px solid #EAE2F5;
+
+    box-shadow: 0 5px 18px rgba(65, 45, 100, 0.07);
+}
+
+.products-nav-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+    padding: 0 24px;
+
+    border: none;
+    border-radius: 100px;
+    background: transparent;
+
+    color: #6B6577;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+.products-nav-item:hover {
+    background: rgba(255, 255, 255, 0.65);
+    color: #5433EB;
+}
+
+.products-nav-item.active {
+    background: #FFFFFF;
+    color: #5433EB;
+
+    border-radius: 100px;
+    box-shadow: 0 3px 10px rgba(65, 45, 100, 0.10);
+}
+
+.products-nav-item.active:hover {
+    background: #FFFFFF;
+    color: #5433EB;
+}
+
+@media (max-width: 560px) {
+    .products-nav {
+        gap: 2px;
+        padding: 4px;
+    }
+
+    .products-nav-item {
+        min-height: 38px;
+        padding: 0 15px;
+        font-size: 13px;
+    }
+}
+
+/* ============================================
+   DASHBOARD + SHOP — EXACT REFERENCE STYLE
+   ============================================ */
+
+.products-main-nav {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    padding: 5px;
+    border-radius: 100px;
+
+    background: #F3EFFA;
+    border: 0.2px solid #E9E1F5;
+    box-shadow: 0 5px 15px rgba(65, 45, 100, 0.07);
+}
+
+.products-main-nav .products-nav-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 35px;
+    padding: 0 24px;
+
+    border: none;
+    border-radius: 100px;
+    background: transparent;
+
+    color: #6B6577;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+
+    box-shadow: none;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+/* Dashboard: keep it inside the lavender pill */
+.products-main-nav .products-nav-item:not(.active) {
+    background: transparent;
+    color: #6B6577;
+}
+
+.products-main-nav .products-nav-item:not(.active):hover {
+    background: rgba(255, 255, 255, 0.65);
+    color: #5433EB;
+}
+
+/* Shop: white rounded active tab */
+.products-main-nav .products-nav-item.active {
+    background: #FFFFFF;
+    color: #5433EB;
+    border-radius: 100px;
+    box-shadow: 0 3px 10px rgba(65, 45, 100, 0.10);
+}
+
+.products-main-nav .products-nav-item.active:hover {
+    background: #FFFFFF;
+    color: #5433EB;
+}
+
+@media (max-width: 560px) {
+    .products-main-nav {
+        gap: 2px;
+        padding: 4px;
+    }
+
+    .products-main-nav .products-nav-item {
+        min-height: 38px;
+        padding: 0 15px;
+        font-size: 13px;
+    }
+}
+
+
+
+/* =====================================================
+   HEADER NAVIGATION — DASHBOARD AND SHOP
+   Keep both tabs consistent in size and appearance
+   ===================================================== */
+
+.products-main-nav {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 5px;
+    border: 1px solid #E9E1F5;
+    border-radius: 100px;
+    background: #F3EFFA;
+    box-shadow: 0 5px 15px rgba(65, 45, 100, 0.07);
+}
+
+.products-main-nav .products-nav-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    min-width: 100px;
+    padding: 0 24px;
+    border: none;
+    border-radius: 100px;
+    background: transparent;
+    color: #6B6577;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: none;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+/* Dashboard and Shop hover */
+.products-main-nav .products-nav-item:hover {
+    background: #FFFFFF;
+    color: #5433EB;
+}
+
+/* Active page — Shop */
+.products-main-nav .products-nav-item.active {
+    background: #FFFFFF;
+    color: #5433EB;
+    box-shadow: 0 3px 10px rgba(65, 45, 100, 0.10);
+}
+
+/* Keep active Shop styling consistent on hover */
+.products-main-nav .products-nav-item.active:hover {
+    background: #FFFFFF;
+    color: #5433EB;
+}
+
+/* Smaller screens */
+@media (max-width: 560px) {
+    .products-main-nav {
+        gap: 2px;
+        padding: 4px;
+    }
+
+    .products-main-nav .products-nav-item {
+        min-width: 0;
+        min-height: 38px;
+        padding: 0 15px;
+        font-size: 13px;
+    }
+}
+
+
+
+/* =====================================================
+   PRODUCTS HEADER — STAYS VISIBLE WHILE SCROLLING
+   ===================================================== */
+
+.products-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #FFFFFF;
+}
+
+/* Keep the header divider visible */
+.products-header-line {
+    position: relative;
+    z-index: 1000;
+    background: #E8E3DC;
+}
+
+
+/* =====================================================
+   PRODUCTS HEADER LOGO COLORS
+   easy = black, Buy = blue
+   ===================================================== */
+
+.products-brand .brand-easy {
+    color: #242127 !important;
+}
+
+.products-brand .brand-buy {
+    color: #2563EB !important;
+}
+
+/* Product image container */
+.product-visual {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Product image fills the available image area */
+.product-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Fallback when an image is unavailable */
+.product-image-placeholder {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-size: 14px;
+}
