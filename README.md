@@ -1,8 +1,6 @@
-# EasyBuy — Java E-Commerce Web Application
+# EasyBuy – Java E-Commerce Web Application
 
 EasyBuy is a Java-based e-commerce web application developed to demonstrate full-stack web development using Java, JSP, Servlets, JDBC, MySQL, HTML, CSS, and JavaScript.
-
-The project follows a structured Java web application architecture with controllers, DAO classes, model classes, JSP views, and database connectivity. It is intended as a learning and portfolio project for demonstrating core Java and web development skills.
 
 ## Project Overview
 
@@ -11,43 +9,37 @@ The project follows a structured Java web application architecture with controll
 - **Backend:** Java, Servlets, JSP, JDBC
 - **Frontend:** HTML5, CSS3, JavaScript
 - **Database:** MySQL
-- **Build Tool:** Apache Maven
+- **Build Tool:** Maven
 - **Development Environment:** Eclipse IDE
-- **Application Server:** Apache Tomcat
+- **Server:** Apache Tomcat
 
 ## Features
 
-The project includes pages and components for the following e-commerce workflows:
+The project is designed to support e-commerce functionality such as:
 
 - User registration and login
 - Product browsing and product details
 - Shopping cart management
-- Order and order-item pages
-- Checkout and payment pages
-- User profile
-- Invite-a-friend page with sharing options
-- Database connectivity using JDBC and MySQL
-- Reusable Java controllers, DAO classes, and model classes
-- CSS styling and JavaScript for the user interface
+- Wishlist functionality
+- Address and checkout pages
+- Order management
+- Payment-method selection
 
-*Note: The availability of a page does not necessarily mean every workflow is fully production-ready. The project should be tested before presenting each feature as complete.*
+Feature availability and completeness depend on the current implementation.
 
-## Technology Stack
+## Technologies Used
 
 | Technology | Purpose |
 |---|---|
 | Java | Application logic |
-| Java Servlets | Handle HTTP requests and application workflows |
-| JSP | Render dynamic web pages |
-| JDBC | Connect Java code to MySQL |
-| MySQL | Store application data |
-| HTML5 | Structure web pages |
-| CSS3 | Styling and responsive layouts |
-| JavaScript | Client-side interactions |
-| Apache Maven | Dependency and build management |
-| Apache Tomcat | Run the Java web application |
+| JSP | Dynamic web pages |
+| Servlets | Request handling and controllers |
+| JDBC | Database connectivity |
+| MySQL | Data storage |
+| HTML, CSS, JavaScript | User interface |
+| Maven | Dependency and build management |
+| Apache Tomcat | Java web application server |
 | Eclipse IDE | Development environment |
-| Git and GitHub | Version control and source-code hosting |
 
 ## Project Structure
 
@@ -65,176 +57,83 @@ easyBuy/
 │           ├── css/
 │           ├── images/
 │           ├── js/
-│           ├── WEB-INF/
-│           ├── home.jsp
-│           ├── login.jsp
-│           ├── register.jsp
-│           ├── products.jsp
-│           ├── product-details.jsp
-│           ├── cart.jsp
-│           ├── orders.jsp
-│           ├── order.jsp
-│           ├── payment.jsp
-│           ├── profile.jsp
-│           └── invite-friend.jsp
+│           └── WEB-INF/
 ├── pom.xml
 ├── .gitignore
+├── .project
+├── .classpath
 └── README.md
 ```
 
-*This is a high-level structure. Some files may be added, removed, or organized differently as development continues.*
+## Prerequisites
 
-## Application Architecture
+Install the following software before running the project:
 
-EasyBuy uses a layered structure:
-
-1. **JSP views:** Display the user interface.
-2. **Servlet controllers:** Receive HTTP requests and coordinate application actions.
-3. **DAO layer:** Handles database operations.
-4. **Model classes:** Represent application data.
-5. **Database utility:** Manages JDBC connectivity to MySQL.
-
-Typical request flow:
-
-```text
-User
-  ↓
-JSP Page
-  ↓
-Servlet Controller
-  ↓
-DAO Layer
-  ↓
-MySQL Database
-  ↓
-Controller returns response
-  ↓
-JSP Page
-```
-
-## Getting Started
-
-### Prerequisites
-
-Install the following software:
-
-- Java Development Kit (JDK), compatible with your project configuration
-- Eclipse IDE with Java web development support
-- Apache Tomcat compatible with the Servlet API used by the project
+- JDK compatible with the project's Java configuration
+- Eclipse IDE with Maven support
+- Apache Tomcat 10.1
 - MySQL Server
-- Apache Maven
-- MySQL Connector/J dependency
+- Git
 
-### 1. Clone the Repository
+## Database Configuration
 
-Open a terminal and run:
-
-```bash
-git clone https://github.com/gogulrajendran13-stack/easyBuy.git
-cd easyBuy
-```
-
-You can also download the repository as a ZIP file from GitHub.
-
-### 2. Open the Project in Eclipse
-
-1. Open Eclipse IDE.
-2. Select **File → Import**.
-3. Choose **Maven → Existing Maven Projects**.
-4. Select the cloned `easyBuy` project folder.
-5. Finish the import and wait for Maven dependencies to resolve.
-
-If you use a different import option, ensure the project is recognized as a Maven Java web application.
-
-### 3. Configure MySQL
-
-1. Start MySQL Server.
-2. Create the database named `ecommerce_db`, or update the database name to match your configuration.
-3. Create the required tables using your project's database schema.
-4. Configure the database credentials using environment variables.
-
-The application expects these environment variable names:
+1. Start your MySQL server.
+2. Create the `ecommerce_db` database if it does not already exist.
+3. Configure the required tables according to the SQL queries used by the application.
+4. Set the database connection environment variables:
 
 ```text
-EASYBUY_DB_USERNAME
-EASYBUY_DB_PASSWORD
+EASYBUY_DB_USERNAME=your_mysql_username
+EASYBUY_DB_PASSWORD=your_mysql_password
 ```
 
-Set their values on your own computer. Do not commit actual database passwords to GitHub.
+Use your own local credentials. Never publish actual passwords in this repository.
 
-The database schema and sample data must be supplied separately if they are not included in this repository.
+Check the database URL and connection settings in the application's database utility class.
 
-### 4. Configure the Database Connection
+## Run the Project in Eclipse
 
-The database utility uses a JDBC connection to MySQL. Verify that:
+1. Clone or download this repository.
+2. In Eclipse, select **File → Import → Maven → Existing Maven Projects**.
+3. Select the project folder containing `pom.xml`.
+4. Finish the import and allow Maven to resolve dependencies.
+5. Configure Apache Tomcat in Eclipse.
+6. Add the EasyBuy project to the Tomcat server.
+7. Start the server.
+8. Open the application's configured URL in your browser.
 
-- MySQL Server is running.
-- The database exists.
-- The username and password are correct.
-- MySQL Connector/J is available through Maven.
-- The JDBC URL and timezone settings match your environment.
-
-Never publish real credentials or private customer data.
-
-### 5. Run the Application
-
-1. Start Eclipse.
-2. Configure a compatible Apache Tomcat server.
-3. Add the `easyBuy` project to the server.
-4. Start the server.
-5. Open the application using the context path and port configured in Eclipse.
-
-For example, your local URL may resemble:
+The local URL depends on the Tomcat port and deployed context path. For example:
 
 ```text
 http://localhost:8081/easyBuy/
 ```
 
-The exact URL depends on your Tomcat port and application context path.
-
 ## Security Notes
 
-- Database credentials should be provided through environment variables.
-- Do not commit passwords, access tokens, or private configuration files.
-- Do not upload customer records or production database backups.
-- Use parameterized SQL queries for database operations.
-- Validate and sanitize user input.
-- Use HTTPS and secure session handling before deploying a public production application.
+- Database credentials should be supplied through environment variables.
+- Do not commit passwords, API keys, tokens, or private customer data.
+- Validate user input and use prepared statements for database queries.
+- Configure HTTPS and production database access before public deployment.
 
-## Current Deployment Status
+## Deployment Status
 
-- **Source code:** Available on GitHub
-- **Local development:** Eclipse and Apache Tomcat
-- **Public live deployment:** To be configured
-
-A traditional Java Servlet/JSP application requires a compatible Java web server. Static hosting alone does not execute JSP pages or run Java Servlets.
-
-## Screenshots
-
-Screenshots of the home page, product listing, product details, cart, and checkout can be added here after capturing them from the running application.
-
-Example:
-
-```text
-Add application screenshots here.
-```
+EasyBuy is maintained as a Java web development and portfolio project. Public deployment requires a hosting environment that supports Java Servlets/JSP and a remotely accessible database.
 
 ## Future Improvements
 
-- Deploy the application to a suitable Java web hosting environment.
-- Provide a database schema and safe sample data for easier setup.
+- Improve input validation and error handling.
 - Add automated tests.
-- Improve responsive design and accessibility.
-- Add production-grade logging and error handling.
-- Review authentication, authorization, and payment security before production use.
+- Improve accessibility and responsive design.
+- Integrate a production payment gateway when appropriate.
+- Deploy the application to a Java-compatible hosting service.
 
 ## Author
 
-**GOGUL R**
+**Gogul R**
 
 - GitHub: https://github.com/gogulrajendran13-stack
 - LinkedIn: https://www.linkedin.com/in/gogul6006/
 
 ## Disclaimer
 
-EasyBuy is a portfolio and learning project. Review the implementation, database setup, security controls, and payment flow before using it for real customers or production transactions.
+This project is intended for learning and portfolio demonstration. Review security, payment processing, and production configuration before using it commercially.
