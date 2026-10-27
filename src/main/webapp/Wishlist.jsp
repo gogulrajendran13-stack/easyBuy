@@ -206,17 +206,40 @@
                             <a href="<%= contextPath %>/product-details?productId=<%= product.getProductId() %>"
    class="wishlist-image-link"
    aria-label="View <%= product.getProductName() %>">
+    
+<!-- Product image area -->
+<a href="<%= contextPath %>/product-details?productId=<%= product.getProductId() %>"
+   class="wishlist-image-link"
+   aria-label="View <%= product.getProductName() %>">
+
     <div class="wishlist-product-image">
 
-        <div class="wishlist-image-art" aria-hidden="true">
-            <span>easyBuy</span>
-        </div>
+        <% if (product.getImageName() != null
+                && !product.getImageName().trim().isEmpty()) { %>
+
+            <img
+                class="wishlist-real-image"
+                
+src="<%= request.getContextPath() %>/images/all-products/<%= product.getImageName().trim() %>"
+
+                alt="<%= product.getProductName() %>"
+                loading="lazy">
+
+        <% } else { %>
+
+            <div class="wishlist-image-art" aria-hidden="true">
+                <span>easyBuy</span>
+            </div>
+
+        <% } %>
 
         <span class="wishlist-image-label">SAVED FOR LATER</span>
 
         <div class="wishlist-image-heart" aria-hidden="true">♥</div>
 
     </div>
+</a>
+
 </a>
 
 

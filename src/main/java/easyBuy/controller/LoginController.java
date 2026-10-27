@@ -128,6 +128,20 @@ public class LoginController extends HttpServlet {
 
         User user =
                 userDAO.getUserByEmail(email);
+        
+
+System.out.println("LOGIN CHECK - User found: " + (user != null));
+
+if (user != null) {
+    System.out.println("LOGIN CHECK - Phone matches: "
+            + clean(user.getPhone()).equals(phone));
+
+    String storedPassword = user.getPasswordHash();
+
+    System.out.println("LOGIN CHECK - Stored hash length: "
+            + (storedPassword == null ? 0 : storedPassword.length()));
+}
+
 
         if (user == null) {
 

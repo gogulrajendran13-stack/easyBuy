@@ -7,21 +7,20 @@ import java.sql.SQLException;
 
 public class DBConnection {
 
-    // Read the hosted database URL from Render.
-    // Use the local database URL when running on your computer.
-    private static final String URL = getEnvironmentValue(
-            "EASYBUY_DB_URL",
+    private static final String LOCAL_URL =
             "jdbc:mysql://localhost:3306/ecommerce_db"
-                    + "?useSSL=false"
-                    + "&serverTimezone=Asia/Kolkata"
-                    + "&allowPublicKeyRetrieval=true"
-    );
+            + "?useSSL=false"
+            + "&serverTimezone=Asia/Kolkata"
+            + "&allowPublicKeyRetrieval=true";
+
+    private static final String URL =
+            getEnvironmentValue("EASYBUY_DB_URL", LOCAL_URL);
 
     private static final String USERNAME =
-            System.getenv("EASYBUY_DB_USERNAME");
+            getEnvironmentValue("EASYBUY_DB_USERNAME", null);
 
     private static final String PASSWORD =
-            System.getenv("EASYBUY_DB_PASSWORD");
+            getEnvironmentValue("EASYBUY_DB_PASSWORD", null);
 
     private static String getEnvironmentValue(
             String variableName, String defaultValue) {
@@ -40,8 +39,7 @@ public class DBConnection {
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("MySQL JDBC Driver loaded successfully.");
         } catch (ClassNotFoundException e) {
-            System.err.println("MySQL JDBC Driver not found.");
-            e.printStackTrace();
+            throw new ExceptionInInitializerError(e);
         }
     }
 
@@ -51,17 +49,28 @@ public class DBConnection {
 
     public static Connection getConnection() throws SQLException {
 
-        if (USERNAME == null || USERNAME.trim().isEmpty()
-                || PASSWORD == null || PASSWORD.isEmpty()) {
+        if (USERNAME == null || USERNAME.isEmpty()) {
             throw new SQLException(
-                    "Database username or password environment variable is missing."
+                    "EASYBUY_DB_USERNAME is missing from the application environment."
             );
         }
 
-        return DriverManager.getConnection(
-                URL,
-                USERNAME,
-                PASSWORD
-        );
+        if (PASSWORD == null || PASSWORD.isEmpty()) {
+            throw new SQLException(
+                    "EASYBUY_DB_PASSWORD is missing from the application environment."
+            );
+        }
+
+        if (URL.contains("localhost:3306")) {
+            System.out.println(
+                    "Database configuration: local MySQL URL selected."
+            );
+        } else {
+            System.out.println(
+                    "Database configuration: hosted database URL selected."
+            );
+        }
+
+        return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
 }
